@@ -209,17 +209,17 @@ export default function Portfolio() {
                             {[
                                 {
                                     title: 'Microservices',
-                                    description: 'Recursive-descent interpreter on the JVM with lexical scoping and closures',
-                                    tech: ['GO', 'JVM', 'Make'],
-                                    repo: 'https://github.com/Ahmad-Faraj/jlox',
-                                    image: '/sys.png'
+                                    description: 'Developing a scalable distributed backend system with clean architecture and microservices design',
+                                    tech: ['GO', 'Kubernetes'],
+                                    repo: 'https://github.com/Ahmad-Faraj/microservices',
+                                    image: '/go.png'
                                 },
                                 {
                                     title: 'Mini Agent',
                                     description: 'AI agent with FastAPI backend and Next.js frontend for LLM-based chat and log analysis',
                                     tech: ['Next.js', 'FastAPI', 'Postgres', 'Docker'],
                                     repo: 'https://github.com/Ahmad-Faraj/mini-agent',
-                                    image: '/ai.png'
+                                    image: '/cursor.png'
                                 },
                                 {
                                     title: 'Student Management System',
