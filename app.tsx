@@ -85,6 +85,25 @@ export default function Portfolio() {
                             </p>
                             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                                 <a
+                                    href="https://linkedin.com/in/ahmed-faraj-cs"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        padding: '10px 20px',
+                                        backgroundColor: '#0077b5',
+                                        color: 'white',
+                                        borderRadius: '6px',
+                                        textDecoration: 'none',
+                                        fontSize: '14px',
+                                        fontWeight: 500,
+                                        transition: 'background 0.2s'
+                                    }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#005885' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#0077b5' }}
+                                >
+                                    LinkedIn
+                                </a>
+                                <a
                                     href="https://github.com/Ahmad-Faraj"
                                     target="_blank"
                                     rel="noreferrer"
@@ -104,12 +123,12 @@ export default function Portfolio() {
                                     GitHub
                                 </a>
                                 <a
-                                    href="https://linkedin.com/in/ahmed-faraj-cs"
+                                    href="https://gitlab.com/Ahmad-Faraj"
                                     target="_blank"
                                     rel="noreferrer"
                                     style={{
                                         padding: '10px 20px',
-                                        backgroundColor: '#0077b5',
+                                        backgroundColor: '#fc6d26',
                                         color: 'white',
                                         borderRadius: '6px',
                                         textDecoration: 'none',
@@ -117,10 +136,10 @@ export default function Portfolio() {
                                         fontWeight: 500,
                                         transition: 'background 0.2s'
                                     }}
-                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#005885' }}
-                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#0077b5' }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#e55a1a' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#fc6d26' }}
                                 >
-                                    LinkedIn
+                                    GitLab
                                 </a>
                                 <a
                                     href="https://codeforces.com/profile/Ahmed_Faraj"
@@ -178,25 +197,6 @@ export default function Portfolio() {
                                     onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#20beff' }}
                                 >
                                     Kaggle
-                                </a>
-                                <a
-                                    href="https://gitlab.com/Ahmad-Faraj"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    style={{
-                                        padding: '10px 20px',
-                                        backgroundColor: '#fc6d26',
-                                        color: 'white',
-                                        borderRadius: '6px',
-                                        textDecoration: 'none',
-                                        fontSize: '14px',
-                                        fontWeight: 500,
-                                        transition: 'background 0.2s'
-                                    }}
-                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#e55a1a' }}
-                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#fc6d26' }}
-                                >
-                                    GitLab
                                 </a>
                             </div>
                         </div>
@@ -489,6 +489,9 @@ export default function Portfolio() {
                                 </a>
                                 <a href="https://x.com/ahmed__faraj" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
                                     X (Twitter)
+                                </a>
+                                <a href="https://discord.com/users/ahmed_faraj" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
+                                    Discord
                                 </a>
                                 <a href="mailto:ahmed.faraj.cs@gmail.com" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
                                     Email
