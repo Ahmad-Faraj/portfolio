@@ -208,7 +208,7 @@ export default function Portfolio() {
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
                             {[
                                 {
-                                    title: 'Microservices',
+                                    title: 'Microservices (Ongoing)',
                                     description: 'Developing a scalable distributed backend system with clean architecture and microservices design',
                                     tech: ['GO', 'Kubernetes'],
                                     repo: 'https://github.com/Ahmad-Faraj/microservices',
@@ -485,7 +485,7 @@ export default function Portfolio() {
                         </div>
                         <div>
                             <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Links</h4>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'row', gap: '8px' }}>
                                 <a href="mailto:ahmed.faraj.cs@gmail.com" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
                                     Email
                                 </a>
