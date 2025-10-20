@@ -128,7 +128,7 @@ export default function Portfolio() {
                                     rel="noreferrer"
                                     style={{
                                         padding: '10px 20px',
-                                        backgroundColor: '#1f8dd6',
+                                        backgroundColor: '#c20000',
                                         color: 'white',
                                         borderRadius: '6px',
                                         textDecoration: 'none',
@@ -136,8 +136,8 @@ export default function Portfolio() {
                                         fontWeight: 500,
                                         transition: 'background 0.2s'
                                     }}
-                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1976d2' }}
-                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1f8dd6' }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#a00000' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#c20000' }}
                                 >
                                     Codeforces
                                 </a>
@@ -159,6 +159,44 @@ export default function Portfolio() {
                                     onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#ffa116' }}
                                 >
                                     LeetCode
+                                </a>
+                                <a
+                                    href="https://www.kaggle.com/ahmadfrag"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        padding: '10px 20px',
+                                        backgroundColor: '#20beff',
+                                        color: 'white',
+                                        borderRadius: '6px',
+                                        textDecoration: 'none',
+                                        fontSize: '14px',
+                                        fontWeight: 500,
+                                        transition: 'background 0.2s'
+                                    }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1aa3d9' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#20beff' }}
+                                >
+                                    Kaggle
+                                </a>
+                                <a
+                                    href="https://gitlab.com/Ahmad-Faraj"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        padding: '10px 20px',
+                                        backgroundColor: '#fc6d26',
+                                        color: 'white',
+                                        borderRadius: '6px',
+                                        textDecoration: 'none',
+                                        fontSize: '14px',
+                                        fontWeight: 500,
+                                        transition: 'background 0.2s'
+                                    }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#e55a1a' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#fc6d26' }}
+                                >
+                                    GitLab
                                 </a>
                             </div>
                         </div>
