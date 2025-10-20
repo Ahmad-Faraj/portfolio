@@ -59,7 +59,7 @@ export default function Portfolio() {
                 <section id="about" style={{ padding: '80px 24px', maxWidth: '1200px', margin: '0 auto' }}>
                     <div style={{ display: 'flex', gap: '40px', alignItems: 'flex-start' }}>
                         <img
-                            src="/profile.jpg"
+                            src="/pfp.jpg"
                             alt="Ahmed Faraj"
                             style={{
                                 width: '120px',
@@ -67,9 +67,10 @@ export default function Portfolio() {
                                 borderRadius: '12px',
                                 objectFit: 'cover',
                                 flexShrink: 0,
-                                border: '1px solid #e0e0e0'
+                                border: '1px solid rgb(0, 0, 0)'
                             }}
                         />
+
                         <div>
                             <h1 style={{ fontSize: '36px', margin: '0 0 12px 0', fontWeight: 700 }}>
                                 Ahmed Faraj
