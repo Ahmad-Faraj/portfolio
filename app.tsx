@@ -90,7 +90,7 @@ export default function Portfolio() {
                                     rel="noreferrer"
                                     style={{
                                         padding: '10px 20px',
-                                        backgroundColor: '#0077b5',
+                                        backgroundColor: '#1a1a1a',
                                         color: 'white',
                                         borderRadius: '6px',
                                         textDecoration: 'none',
@@ -98,8 +98,8 @@ export default function Portfolio() {
                                         fontWeight: 500,
                                         transition: 'background 0.2s'
                                     }}
-                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#005885' }}
-                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#0077b5' }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#333' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1a1a1a' }}
                                 >
                                     LinkedIn
                                 </a>
@@ -109,7 +109,7 @@ export default function Portfolio() {
                                     rel="noreferrer"
                                     style={{
                                         padding: '10px 20px',
-                                        backgroundColor: '#000',
+                                        backgroundColor: '#1a1a1a',
                                         color: 'white',
                                         borderRadius: '6px',
                                         textDecoration: 'none',
@@ -118,7 +118,7 @@ export default function Portfolio() {
                                         transition: 'background 0.2s'
                                     }}
                                     onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#333' }}
-                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#000' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1a1a1a' }}
                                 >
                                     GitHub
                                 </a>
@@ -128,7 +128,7 @@ export default function Portfolio() {
                                     rel="noreferrer"
                                     style={{
                                         padding: '10px 20px',
-                                        backgroundColor: '#fc6d26',
+                                        backgroundColor: '#1a1a1a',
                                         color: 'white',
                                         borderRadius: '6px',
                                         textDecoration: 'none',
@@ -136,8 +136,8 @@ export default function Portfolio() {
                                         fontWeight: 500,
                                         transition: 'background 0.2s'
                                     }}
-                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#e55a1a' }}
-                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#fc6d26' }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#333' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1a1a1a' }}
                                 >
                                     GitLab
                                 </a>
@@ -147,7 +147,7 @@ export default function Portfolio() {
                                     rel="noreferrer"
                                     style={{
                                         padding: '10px 20px',
-                                        backgroundColor: '#c20000',
+                                        backgroundColor: '#1a1a1a',
                                         color: 'white',
                                         borderRadius: '6px',
                                         textDecoration: 'none',
@@ -155,8 +155,8 @@ export default function Portfolio() {
                                         fontWeight: 500,
                                         transition: 'background 0.2s'
                                     }}
-                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#a00000' }}
-                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#c20000' }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#333' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1a1a1a' }}
                                 >
                                     Codeforces
                                 </a>
@@ -166,7 +166,7 @@ export default function Portfolio() {
                                     rel="noreferrer"
                                     style={{
                                         padding: '10px 20px',
-                                        backgroundColor: '#ffa116',
+                                        backgroundColor: '#1a1a1a',
                                         color: 'white',
                                         borderRadius: '6px',
                                         textDecoration: 'none',
@@ -174,8 +174,8 @@ export default function Portfolio() {
                                         fontWeight: 500,
                                         transition: 'background 0.2s'
                                     }}
-                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#e6940a' }}
-                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#ffa116' }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#333' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1a1a1a' }}
                                 >
                                     LeetCode
                                 </a>
@@ -185,7 +185,7 @@ export default function Portfolio() {
                                     rel="noreferrer"
                                     style={{
                                         padding: '10px 20px',
-                                        backgroundColor: '#20beff',
+                                        backgroundColor: '#1a1a1a',
                                         color: 'white',
                                         borderRadius: '6px',
                                         textDecoration: 'none',
@@ -193,8 +193,8 @@ export default function Portfolio() {
                                         fontWeight: 500,
                                         transition: 'background 0.2s'
                                     }}
-                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1aa3d9' }}
-                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#20beff' }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#333' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1a1a1a' }}
                                 >
                                     Kaggle
                                 </a>
