@@ -502,7 +502,7 @@ export default function Portfolio() {
                         <div>
                             <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Location</h4>
                             <p style={{ margin: 0, color: '#aaa', fontSize: '14px' }}>
-                                <a href="https://discord.com/users/ahmed_faraj" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
+                                <a href="https://www.google.com/maps/place/Faculty+of+Computers+and+Information+-+Suez+Canal+University/@30.6215224,32.2682716,18.5z/data=!4m5!3m4!1s0x0:0x271d4ffdf2fb0795!8m2!3d30.6211514!4d32.2684014?shorturl=1" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
                                     Ismailia, Egypt
                                 </a>
                             </p>
