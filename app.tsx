@@ -226,7 +226,7 @@ export default function Portfolio() {
                                     description: 'RESTful API to manage student records with MVC architecture and MongoDB',
                                     tech: ['Node.js', 'Express', 'MongoDB'],
                                     repo: 'https://github.com/Ahmad-Faraj/student-doctor-api',
-                                    image: '/std.png'
+                                    image: '/std.jpg'
                                 },
                                 {
                                     title: 'ML Code Analyzer',
