@@ -243,6 +243,13 @@ export default function Portfolio() {
                                     tech: ['Java', 'JVM', 'Make'],
                                     repo: 'https://github.com/Ahmad-Faraj/jlox',
                                     image: '/placeholder.svg'
+                                },
+                                {
+                                    title: 'Lox Interpreter 2',
+                                    description: 'Recursive-descent interpreter on the JVM with lexical scoping and closures',
+                                    tech: ['Java', 'JVM', 'Make'],
+                                    repo: 'https://github.com/Ahmad-Faraj/jlox',
+                                    image: '/placeholder.svg'
                                 }
                             ].map((project, idx) => (
                                 <div
@@ -481,11 +488,8 @@ export default function Portfolio() {
                         <div>
                             <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Links</h4>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                                <a href="https://github.com/Ahmad-Faraj" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
-                                    GitHub
-                                </a>
-                                <a href="https://linkedin.com/in/ahmed-faraj-cs" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
-                                    LinkedIn
+                                <a href="mailto:ahmed.faraj.cs@gmail.com" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
+                                    Email
                                 </a>
                                 <a href="https://x.com/ahmed__faraj" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
                                     X (Twitter)
@@ -493,14 +497,15 @@ export default function Portfolio() {
                                 <a href="https://discord.com/users/ahmed_faraj" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
                                     Discord
                                 </a>
-                                <a href="mailto:ahmed.faraj.cs@gmail.com" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
-                                    Email
-                                </a>
                             </div>
                         </div>
                         <div>
                             <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Location</h4>
-                            <p style={{ margin: 0, color: '#aaa', fontSize: '14px' }}>Ismailia, Egypt</p>
+                            <p style={{ margin: 0, color: '#aaa', fontSize: '14px' }}>
+                                <a href="https://discord.com/users/ahmed_faraj" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
+                                    Ismailia, Egypt
+                                </a>
+                            </p>
                         </div>
                     </div>
                     <div style={{ borderTop: '1px solid #333', paddingTop: '24px', textAlign: 'center', color: '#666', fontSize: '13px' }}>
