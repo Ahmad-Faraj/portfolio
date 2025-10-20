@@ -83,7 +83,7 @@ export default function Portfolio() {
                             <p style={{ fontSize: '16px', color: '#555', lineHeight: '1.6', marginBottom: '20px' }}>
                                 Third-year Computer Science student at Suez Canal University with expertise in backend development, DevOps, and competitive programming. ACPC finalist with 3000+ algorithmic problems solved.
                             </p>
-                            <div style={{ display: 'flex', gap: '16px' }}>
+                            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                                 <a
                                     href="https://github.com/Ahmad-Faraj"
                                     target="_blank"
@@ -121,6 +121,44 @@ export default function Portfolio() {
                                     onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#0077b5' }}
                                 >
                                     LinkedIn
+                                </a>
+                                <a
+                                    href="https://codeforces.com/profile/Ahmed_Faraj"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        padding: '10px 20px',
+                                        backgroundColor: '#1f8dd6',
+                                        color: 'white',
+                                        borderRadius: '6px',
+                                        textDecoration: 'none',
+                                        fontSize: '14px',
+                                        fontWeight: 500,
+                                        transition: 'background 0.2s'
+                                    }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1976d2' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1f8dd6' }}
+                                >
+                                    Codeforces
+                                </a>
+                                <a
+                                    href="https://leetcode.com/u/Ahmed_Faraj/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        padding: '10px 20px',
+                                        backgroundColor: '#ffa116',
+                                        color: 'white',
+                                        borderRadius: '6px',
+                                        textDecoration: 'none',
+                                        fontSize: '14px',
+                                        fontWeight: 500,
+                                        transition: 'background 0.2s'
+                                    }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#e6940a' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#ffa116' }}
+                                >
+                                    LeetCode
                                 </a>
                             </div>
                         </div>
@@ -410,6 +448,9 @@ export default function Portfolio() {
                                 </a>
                                 <a href="https://linkedin.com/in/ahmed-faraj-cs" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
                                     LinkedIn
+                                </a>
+                                <a href="https://x.com/ahmed__faraj" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
+                                    X (Twitter)
                                 </a>
                                 <a href="mailto:ahmed.faraj.cs@gmail.com" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
                                     Email
