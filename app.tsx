@@ -30,7 +30,7 @@ export default function Portfolio() {
                     Ahmed Faraj
                 </div>
                 <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-                    {['about', 'projects', 'achievements', 'opensource', 'cv'].map(item => (
+                    {['about', 'projects', 'achievements', 'volunteer', 'cv'].map(item => (
                         <button
                             key={item}
                             onClick={() => scrollToSection(item)}
@@ -58,21 +58,18 @@ export default function Portfolio() {
                 {/* About Section */}
                 <section id="about" style={{ padding: '80px 24px', maxWidth: '1200px', margin: '0 auto' }}>
                     <div style={{ display: 'flex', gap: '40px', alignItems: 'flex-start' }}>
-                        <div style={{
-                            width: '120px',
-                            height: '120px',
-                            borderRadius: '12px',
-                            backgroundColor: '#000',
-                            flexShrink: 0,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            fontSize: '48px',
-                            fontWeight: 700,
-                            color: 'white'
-                        }}>
-                            AF
-                        </div>
+                        <img
+                            src="/profile.jpg"
+                            alt="Ahmed Faraj"
+                            style={{
+                                width: '120px',
+                                height: '120px',
+                                borderRadius: '12px',
+                                objectFit: 'cover',
+                                flexShrink: 0,
+                                border: '1px solid #e0e0e0'
+                            }}
+                        />
                         <div>
                             <h1 style={{ fontSize: '36px', margin: '0 0 12px 0', fontWeight: 700 }}>
                                 Ahmed Faraj
@@ -397,10 +394,10 @@ export default function Portfolio() {
                     </div>
                 </section>
 
-                {/* Open Source Section */}
-                <section id="opensource" style={{ padding: '80px 24px', backgroundColor: 'white' }}>
+                {/* Volunteer Section */}
+                <section id="volunteer" style={{ padding: '80px 24px', backgroundColor: 'white' }}>
                     <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-                        <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '40px' }}>Open Source Involvement</h2>
+                        <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '40px' }}></h2>
                         <div style={{ display: 'grid', gap: '16px' }}>
                             {[
                                 {
@@ -480,9 +477,9 @@ export default function Portfolio() {
                 <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '32px', marginBottom: '32px' }}>
                         <div>
-                            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Ahmed Faraj</h4>
+                            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Quote</h4>
                             <p style={{ margin: 0, color: '#aaa', fontSize: '14px', lineHeight: '1.6' }}>
-                                Software engineer focusing on backend development, DevOps, and competitive programming.
+                                'What I cannot build. I do not understand.' — Richard Feynman
                             </p>
                         </div>
                         <div>
