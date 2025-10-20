@@ -219,7 +219,7 @@ export default function Portfolio() {
                                     description: 'AI agent with FastAPI backend and Next.js frontend for LLM-based chat and log analysis',
                                     tech: ['Next.js', 'FastAPI', 'Postgres', 'Docker'],
                                     repo: 'https://github.com/Ahmad-Faraj/mini-agent',
-                                    image: '/cursor.png'
+                                    image: '/ai.png'
                                 },
                                 {
                                     title: 'Student Management System',
