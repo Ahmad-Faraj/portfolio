@@ -212,7 +212,7 @@ export default function Portfolio() {
                                     description: 'Developing a scalable distributed backend system with clean architecture and microservices design',
                                     tech: ['GO', 'Kubernetes'],
                                     repo: 'https://github.com/Ahmad-Faraj/microservices',
-                                    image: '/go.png'
+                                    image: '/go.jpg'
                                 },
                                 {
                                     title: 'Mini Agent',
