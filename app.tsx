@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default function Portfolio() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-    const scrollToSection = (id) => {
+    const scrollToSection = (id: string) => {
         const element = document.getElementById(id)
         element?.scrollIntoView({ behavior: 'smooth' })
         setMobileMenuOpen(false)
@@ -44,8 +44,8 @@ export default function Portfolio() {
                                 padding: '8px 0',
                                 transition: 'opacity 0.2s'
                             }}
-                            onMouseEnter={(e) => e.target.style.opacity = '0.7'}
-                            onMouseLeave={(e) => e.target.style.opacity = '1'}
+                            onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => { e.currentTarget.style.opacity = '0.7' }}
+                            onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => { e.currentTarget.style.opacity = '1' }}
                         >
                             {item}
                         </button>
@@ -98,8 +98,8 @@ export default function Portfolio() {
                                         fontWeight: 500,
                                         transition: 'background 0.2s'
                                     }}
-                                    onMouseEnter={(e) => e.target.style.backgroundColor = '#333'}
-                                    onMouseLeave={(e) => e.target.style.backgroundColor = '#000'}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#333' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#000' }}
                                 >
                                     GitHub
                                 </a>
@@ -117,8 +117,8 @@ export default function Portfolio() {
                                         fontWeight: 500,
                                         transition: 'background 0.2s'
                                     }}
-                                    onMouseEnter={(e) => e.target.style.backgroundColor = '#005885'}
-                                    onMouseLeave={(e) => e.target.style.backgroundColor = '#0077b5'}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#005885' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#0077b5' }}
                                 >
                                     LinkedIn
                                 </a>
@@ -370,8 +370,8 @@ export default function Portfolio() {
                                 fontSize: '14px',
                                 transition: 'background 0.2s'
                             }}
-                            onMouseEnter={(e) => e.target.style.backgroundColor = '#333'}
-                            onMouseLeave={(e) => e.target.style.backgroundColor = '#000'}
+                            onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#333' }}
+                            onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#000' }}
                         >
                             Download CV (PDF)
                         </a>
@@ -397,13 +397,13 @@ export default function Portfolio() {
                         <div>
                             <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Links</h4>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                                <a href="https://github.com/Ahmad-Faraj" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#fff'} onMouseLeave={(e) => e.target.style.color = '#aaa'}>
+                                <a href="https://github.com/Ahmad-Faraj" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
                                     GitHub
                                 </a>
-                                <a href="https://linkedin.com/in/ahmed-faraj-cs" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#fff'} onMouseLeave={(e) => e.target.style.color = '#aaa'}>
+                                <a href="https://linkedin.com/in/ahmed-faraj-cs" target="_blank" rel="noreferrer" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
                                     LinkedIn
                                 </a>
-                                <a href="mailto:ahmed.faraj.cs@gmail.com" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#fff'} onMouseLeave={(e) => e.target.style.color = '#aaa'}>
+                                <a href="mailto:ahmed.faraj.cs@gmail.com" style={{ color: '#aaa', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#fff' }} onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#aaa' }}>
                                     Email
                                 </a>
                             </div>
