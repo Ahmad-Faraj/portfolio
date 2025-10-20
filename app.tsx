@@ -208,46 +208,46 @@ export default function Portfolio() {
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
                             {[
                                 {
+                                    title: 'Microservices',
+                                    description: 'Recursive-descent interpreter on the JVM with lexical scoping and closures',
+                                    tech: ['GO', 'JVM', 'Make'],
+                                    repo: 'https://github.com/Ahmad-Faraj/jlox',
+                                    image: '/sys.png'
+                                },
+                                {
                                     title: 'Mini Agent',
                                     description: 'AI agent with FastAPI backend and Next.js frontend for LLM-based chat and log analysis',
                                     tech: ['Next.js', 'FastAPI', 'Postgres', 'Docker'],
                                     repo: 'https://github.com/Ahmad-Faraj/mini-agent',
-                                    image: '/placeholder.svg'
-                                },
-                                {
-                                    title: 'ML Code Analyzer',
-                                    description: 'Static analysis tool for ML code quality and performance optimization detection',
-                                    tech: ['Python', 'AST', 'Machine Learning'],
-                                    repo: 'https://github.com/Ahmad-Faraj/ml-code-analyzer',
-                                    image: '/placeholder.svg'
+                                    image: '/ai.png'
                                 },
                                 {
                                     title: 'Student Management System',
                                     description: 'RESTful API to manage student records with MVC architecture and MongoDB',
                                     tech: ['Node.js', 'Express', 'MongoDB'],
                                     repo: 'https://github.com/Ahmad-Faraj/student-doctor-api',
-                                    image: '/placeholder.svg'
+                                    image: '/std.png'
+                                },
+                                {
+                                    title: 'ML Code Analyzer',
+                                    description: 'Static analysis tool for ML code quality and performance optimization detection',
+                                    tech: ['Python', 'AST', 'Machine Learning'],
+                                    repo: 'https://github.com/Ahmad-Faraj/ml-code-analyzer',
+                                    image: '/ml.png'
                                 },
                                 {
                                     title: 'Jack OS',
                                     description: 'Operating system for a 16-bit Hack CPU with file I/O and system calls',
                                     tech: ['HDL', 'Jack', 'VM'],
                                     repo: 'https://github.com/Ahmad-Faraj/jack-os',
-                                    image: '/placeholder.svg'
+                                    image: '/nand2tetris.png'
                                 },
                                 {
                                     title: 'Lox Interpreter',
                                     description: 'Recursive-descent interpreter on the JVM with lexical scoping and closures',
                                     tech: ['Java', 'JVM', 'Make'],
                                     repo: 'https://github.com/Ahmad-Faraj/jlox',
-                                    image: '/placeholder.svg'
-                                },
-                                {
-                                    title: 'Lox Interpreter 2',
-                                    description: 'Recursive-descent interpreter on the JVM with lexical scoping and closures',
-                                    tech: ['Java', 'JVM', 'Make'],
-                                    repo: 'https://github.com/Ahmad-Faraj/jlox',
-                                    image: '/placeholder.svg'
+                                    image: '/lox.png'
                                 }
                             ].map((project, idx) => (
                                 <div
