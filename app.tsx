@@ -137,31 +137,36 @@ export default function Portfolio() {
                                     title: 'Mini Agent',
                                     description: 'AI agent with FastAPI backend and Next.js frontend for LLM-based chat and log analysis',
                                     tech: ['Next.js', 'FastAPI', 'Postgres', 'Docker'],
-                                    repo: 'https://github.com/Ahmad-Faraj/mini-agent'
+                                    repo: 'https://github.com/Ahmad-Faraj/mini-agent',
+                                    image: '/placeholder.svg'
                                 },
                                 {
                                     title: 'ML Code Analyzer',
                                     description: 'Static analysis tool for ML code quality and performance optimization detection',
                                     tech: ['Python', 'AST', 'Machine Learning'],
-                                    repo: 'https://github.com/Ahmad-Faraj/ml-code-analyzer'
+                                    repo: 'https://github.com/Ahmad-Faraj/ml-code-analyzer',
+                                    image: '/placeholder.svg'
                                 },
                                 {
                                     title: 'Student Management System',
                                     description: 'RESTful API to manage student records with MVC architecture and MongoDB',
                                     tech: ['Node.js', 'Express', 'MongoDB'],
-                                    repo: 'https://github.com/Ahmad-Faraj/student-doctor-api'
+                                    repo: 'https://github.com/Ahmad-Faraj/student-doctor-api',
+                                    image: '/placeholder.svg'
                                 },
                                 {
                                     title: 'Jack OS',
                                     description: 'Operating system for a 16-bit Hack CPU with file I/O and system calls',
                                     tech: ['HDL', 'Jack', 'VM'],
-                                    repo: 'https://github.com/Ahmad-Faraj/jack-os'
+                                    repo: 'https://github.com/Ahmad-Faraj/jack-os',
+                                    image: '/placeholder.svg'
                                 },
                                 {
                                     title: 'Lox Interpreter',
                                     description: 'Recursive-descent interpreter on the JVM with lexical scoping and closures',
                                     tech: ['Java', 'JVM', 'Make'],
-                                    repo: 'https://github.com/Ahmad-Faraj/jlox'
+                                    repo: 'https://github.com/Ahmad-Faraj/jlox',
+                                    image: '/placeholder.svg'
                                 }
                             ].map((project, idx) => (
                                 <div
@@ -183,6 +188,9 @@ export default function Portfolio() {
                                         e.currentTarget.style.boxShadow = 'none'
                                     }}
                                 >
+                                    <div style={{ width: '100%', height: '160px', borderRadius: '8px', overflow: 'hidden', backgroundColor: 'white', marginBottom: '12px', border: '1px solid #eaeaea' }}>
+                                        <img src={project.image} alt={`${project.title} cover`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                                    </div>
                                     <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontWeight: 600 }}>
                                         {project.title}
                                     </h3>
