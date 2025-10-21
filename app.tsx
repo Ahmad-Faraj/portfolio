@@ -59,7 +59,7 @@ export default function Portfolio() {
                 <section id="about" style={{ padding: '80px 24px', maxWidth: '1200px', margin: '0 auto' }}>
                     <div style={{ display: 'flex', gap: '40px', alignItems: 'flex-start' }}>
                         <img
-                            src="/pfp.jpg"
+                            src={`${import.meta.env.BASE_URL}pfp.jpg`}
                             alt="Ahmed Faraj"
                             style={{
                                 width: '120px',
@@ -211,70 +211,70 @@ export default function Portfolio() {
                                     description: 'Developing a scalable distributed backend system with clean architecture and microservices design',
                                     tech: ['GO', 'Kubernetes'],
                                     repo: 'https://github.com/Ahmad-Faraj/microservices',
-                                    image: '/micro.png'
+                                    image: `${import.meta.env.BASE_URL}micro.png`
                                 },
                                 {
                                     title: 'Mini Agent',
                                     description: 'AI agent with FastAPI backend and Next.js frontend for LLM-based chat and log analysis',
                                     tech: ['Next.js', 'FastAPI', 'Postgres', 'Docker'],
                                     repo: 'https://github.com/Ahmad-Faraj/mini-agent',
-                                    image: '/ai.png'
+                                    image: `${import.meta.env.BASE_URL}ai.png`
                                 },
                                 {
                                     title: 'Student Management System',
                                     description: 'RESTful API to manage student records with MVC architecture and MongoDB',
                                     tech: ['Node.js', 'Express', 'MongoDB'],
                                     repo: 'https://github.com/Ahmad-Faraj/student-doctor-api',
-                                    image: '/std.jpg'
+                                    image: `${import.meta.env.BASE_URL}std.jpg`
                                 },
                                 {
                                     title: 'Jack OS',
                                     description: 'Operating system for a 16-bit Hack CPU with file I/O, system calls, and a stack-based virtual machine.',
                                     tech: ['HDL', 'Jack', 'VM'],
                                     repo: 'https://github.com/Ahmad-Faraj/jack-os',
-                                    image: '/nand2tetris.png'
+                                    image: `${import.meta.env.BASE_URL}nand2tetris.png`
                                 },
                                 {
                                     title: 'Lox Interpreter',
                                     description: 'Recursive-descent interpreter on the JVM with lexical scoping, closures, AST evaluation, and Java FFI',
                                     tech: ['Java', 'JVM', 'Make'],
                                     repo: 'https://github.com/Ahmad-Faraj/jlox',
-                                    image: '/lox.png'
+                                    image: `${import.meta.env.BASE_URL}lox.png`
                                 },
                                 {
                                     title: 'ML Code Analyzer',
                                     description: 'ML model to classify Codeforces submissions as correct, buggy, or inefficient using runtime and memory features',
                                     tech: ['MATLAB', 'Machine Learning'],
                                     repo: 'https://github.com/Ahmad-Faraj/ml-code-analyzer',
-                                    image: '/ml.png'
+                                    image: `${import.meta.env.BASE_URL}ml.png`
                                 },
                                 {
                                     title: 'ICPC World Analysis',
                                     description: 'Static analysis tool for ML code quality and performance optimization detection',
                                     tech: ['Python', 'Pandas', 'Matplotlib', 'Data Science'],
                                     repo: 'https://www.kaggle.com/code/ahmadfrag/icpc-finalists-analysis',
-                                    image: '/kagle.png'
+                                    image: `${import.meta.env.BASE_URL}kagle.png`
                                 },
                                 {
                                     title: 'Digital Image Processing',
                                     description: 'GUI app for noise reduction and JPEG compression with visual comparison',
                                     tech: ['Python', 'Image Processing'],
                                     repo: 'https://github.com/Ahmad-Faraj/digital-image-processing-project',
-                                    image: '/noise_compare.png'
+                                    image: `${import.meta.env.BASE_URL}noise_compare.png`
                                 },
                                 {
                                     title: 'Manim',
                                     description: 'Created animated visualizations with Manim to illustrate probability concepts, including the Monty Hall problem',
                                     tech: ['Python', 'Manim', 'Math'],
                                     repo: 'https://github.com/Ahmad-Faraj/Manim',
-                                    image: '/manim.png'
+                                    image: `${import.meta.env.BASE_URL}manim.png`
                                 },
                                 {
                                     title: '1D Chess',
                                     description: '1D chess game with turn-based piece movement, board state encoding, and interactive browser UI.',
                                     tech: ['HTML', 'CSS', 'JavaScript'],
                                     repo: 'https://github.com/Ahmad-Faraj/1D-Chess',
-                                    image: '/chess.png'
+                                    image: `${import.meta.env.BASE_URL}chess.png`
                                 }
                             ].map((project, idx) => (
                                 <div
@@ -472,7 +472,7 @@ export default function Portfolio() {
                         <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '20px' }}>Curriculum Vitae</h2>
                         <div style={{ display: 'flex', gap: '16px' }}>
                             <a
-                                href="/ahmed_faraj_cv.pdf"
+                                href={`${import.meta.env.BASE_URL}ahmed_faraj_cv.pdf`}
                                 style={{
                                     display: 'inline-block',
                                     padding: '12px 28px',
@@ -490,7 +490,7 @@ export default function Portfolio() {
                                 Download CV (PDF)
                             </a>
                             <a
-                                href="/ahmed_faraj_transcript_english.pdf"
+                                href={`${import.meta.env.BASE_URL}ahmed_faraj_transcript_english.pdf`}
                                 style={{
                                     display: 'inline-block',
                                     padding: '12px 28px',
