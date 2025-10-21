@@ -30,7 +30,7 @@ export default function Portfolio() {
                     Ahmed Faraj
                 </div>
                 <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-                    {['about', 'projects', 'achievements', 'volunteer', 'cv'].map(item => (
+                    {['about', 'projects', 'achievements', 'extracurricular', 'CV'].map(item => (
                         <button
                             key={item}
                             onClick={() => scrollToSection(item)}
@@ -76,11 +76,10 @@ export default function Portfolio() {
                                 Ahmed Faraj
                             </h1>
                             <p style={{ fontSize: '18px', color: '#666', margin: '0 0 20px 0' }}>
-                                Software Engineer | Backend & DevOps | Open Source Contributor
+                                CS student | Backend & DevOps Engineer | Open Source Contributor
                             </p>
                             <p style={{ fontSize: '16px', color: '#555', lineHeight: '1.6', marginBottom: '20px' }}>
-                                Third-year Computer Science student at Suez Canal University with expertise in backend development, DevOps, and competitive programming. ACPC finalist with 3000+ algorithmic problems solved.
-                            </p>
+                                Third-year Computer Science student at Suez Canal University (GPA 3.7/4.0, third in class). Backend & DevOps engineer experienced in microservices and distributed systems. Open-source contributor at GitLab, ACPC Finalist, and competitive programmer with 3,000+ problems solved.                            </p>
                             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                                 <a
                                     href="https://linkedin.com/in/ahmed-faraj-cs"
@@ -229,25 +228,53 @@ export default function Portfolio() {
                                     image: '/std.jpg'
                                 },
                                 {
-                                    title: 'ML Code Analyzer',
-                                    description: 'Static analysis tool for ML code quality and performance optimization detection',
-                                    tech: ['Python', 'AST', 'Machine Learning'],
-                                    repo: 'https://github.com/Ahmad-Faraj/ml-code-analyzer',
-                                    image: '/ml.png'
-                                },
-                                {
                                     title: 'Jack OS',
-                                    description: 'Operating system for a 16-bit Hack CPU with file I/O and system calls',
+                                    description: 'Operating system for a 16-bit Hack CPU with file I/O, system calls, and a stack-based virtual machine.',
                                     tech: ['HDL', 'Jack', 'VM'],
                                     repo: 'https://github.com/Ahmad-Faraj/jack-os',
                                     image: '/nand2tetris.png'
                                 },
                                 {
                                     title: 'Lox Interpreter',
-                                    description: 'Recursive-descent interpreter on the JVM with lexical scoping and closures',
+                                    description: 'Recursive-descent interpreter on the JVM with lexical scoping, closures, AST evaluation, and Java FFI',
                                     tech: ['Java', 'JVM', 'Make'],
                                     repo: 'https://github.com/Ahmad-Faraj/jlox',
                                     image: '/lox.png'
+                                },
+                                {
+                                    title: 'ML Code Analyzer',
+                                    description: 'ML model to classify Codeforces submissions as correct, buggy, or inefficient using runtime and memory features',
+                                    tech: ['MATLAB', 'Machine Learning'],
+                                    repo: 'https://github.com/Ahmad-Faraj/ml-code-analyzer',
+                                    image: '/ml.png'
+                                },
+                                {
+                                    title: 'ICPC World Analysis',
+                                    description: 'Static analysis tool for ML code quality and performance optimization detection',
+                                    tech: ['Python', 'Pandas', 'Matplotlib', 'Data Science'],
+                                    repo: 'https://www.kaggle.com/code/ahmadfrag/icpc-finalists-analysis',
+                                    image: '/kagle.png'
+                                },
+                                {
+                                    title: 'Digital Image Processing',
+                                    description: 'GUI app for noise reduction and JPEG compression with visual comparison',
+                                    tech: ['Python', 'Image Processing'],
+                                    repo: 'https://github.com/Ahmad-Faraj/digital-image-processing-project',
+                                    image: '/noise_compare.png'
+                                },
+                                {
+                                    title: 'Manim',
+                                    description: 'Created animated visualizations with Manim to illustrate probability concepts, including the Monty Hall problem',
+                                    tech: ['Python', 'Manim', 'Math'],
+                                    repo: 'https://github.com/Ahmad-Faraj/Manim',
+                                    image: '/manim.png'
+                                },
+                                {
+                                    title: '1D Chess',
+                                    description: '1D chess game with turn-based piece movement, board state encoding, and interactive browser UI.',
+                                    tech: ['HTML', 'CSS', 'JavaScript'],
+                                    repo: 'https://github.com/Ahmad-Faraj/1D-Chess',
+                                    image: '/chess.png'
                                 }
                             ].map((project, idx) => (
                                 <div
@@ -316,16 +343,17 @@ export default function Portfolio() {
                         {/* Competitive Programming */}
                         <div style={{ marginBottom: '60px' }}>
                             <h3 style={{ fontSize: '20px', fontWeight: 600, marginBottom: '24px', color: '#333' }}>
-                                Competitive Programming
+                                General
                             </h3>
                             <div style={{ display: 'grid', gap: '16px' }}>
                                 {[
                                     { title: 'ACPC Finalist', desc: 'Ranked 59th in ECPC and 1st in university', date: 'Aug 2025', link: 'https://icpc.global/ICPCID/XRR2FB1ZXTL5' },
-                                    { title: 'IOPC', desc: 'Ranked 77th out of 435 participants', date: 'May 2025', link: 'https://drive.google.com/file/d/1CiBir-tP2x3pdtl4VqHxg-ABw2l8cR-P/view?usp=drive_link' },
                                     { title: 'Meta Hacker Cup', desc: 'Advanced to Round 2 (Top 4,732/22,494)', date: 'Oct 2024', link: 'https://www.facebook.com/codingcompetitions/hacker-cup/2024/certificate/3769267336631460' },
-                                    { title: 'IEEEXtreme', desc: '524th rank out of 8,385 teams worldwide', date: 'Oct 2025' },
-                                    { title: 'Hacktoberfest', desc: 'Ranked in top 10,000 and earned Super Contributor', date: 'Oct 2025', link: 'https://www.holopin.io/@ahmadfaraj' },
-                                    { title: 'Codeforces & LeetCode', desc: 'Codeforces 1600+ (Egypt Top 1%), LeetCode 1900+ (Global Top 3%), 3000+ problems solved', date: '' }
+                                    { title: 'IEEEXtreme', desc: '? rank out of 8,385 teams worldwide', date: 'Oct 2025' },
+                                    { title: 'IOPC', desc: 'Ranked 77th out of 435 participants', date: 'May 2025', link: 'https://drive.google.com/file/d/1CiBir-tP2x3pdtl4VqHxg-ABw2l8cR-P/view?usp=drive_link' },
+                                    { title: 'Codeforces & LeetCode', desc: 'Codeforces 1600+ (Egypt Top 1%), LeetCode 1900+ (Global Top 3%), 3000+ problems solved', date: '' },
+                                    { title: 'GitLab Hackthon', desc: '2nd Place, contributed to core GitLab projects', date: 'Oct 2025', link: 'https://contributors.gitlab.com/hackathon' },
+                                    { title: 'Hacktoberfest', desc: 'Ranked in top 10,000 and earned Super Contributor', date: 'Oct 2025', link: 'https://www.holopin.io/@ahmadfaraj' }
                                 ].map((ach, idx) => (
                                     <div
                                         key={idx}
@@ -395,10 +423,10 @@ export default function Portfolio() {
                     </div>
                 </section>
 
-                {/* Volunteer Section */}
-                <section id="volunteer" style={{ padding: '80px 24px', backgroundColor: 'white' }}>
+                {/* extracurricular Section */}
+                <section id="extracurricular" style={{ padding: '80px 24px', backgroundColor: 'white' }}>
                     <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-                        <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '40px' }}></h2>
+                        <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '40px' }}>Extracurricular</h2>
                         <div style={{ display: 'grid', gap: '16px' }}>
                             {[
                                 {
@@ -439,33 +467,50 @@ export default function Portfolio() {
                 </section>
 
                 {/* CV Section */}
-                <section id="cv" style={{ padding: '80px 24px' }}>
+                <section id="CV" style={{ padding: '80px 24px' }}>
                     <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
                         <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '20px' }}>Curriculum Vitae</h2>
-                        <p style={{ color: '#666', fontSize: '15px', lineHeight: '1.6', marginBottom: '24px' }}>
-                            Experienced software engineer with expertise in backend development, DevOps, competitive programming, and open-source contributions.
-                            Strong foundation in data structures, algorithms, and system design with proven ability to deliver scalable solutions.
-                        </p>
-                        <a
-                            href="/cv.pdf"
-                            style={{
-                                display: 'inline-block',
-                                padding: '12px 28px',
-                                backgroundColor: '#000',
-                                color: 'white',
-                                textDecoration: 'none',
-                                borderRadius: '6px',
-                                fontWeight: 500,
-                                fontSize: '14px',
-                                transition: 'background 0.2s'
-                            }}
-                            onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#333' }}
-                            onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#000' }}
-                        >
-                            Download CV (PDF)
-                        </a>
+                        <div style={{ display: 'flex', gap: '16px' }}>
+                            <a
+                                href="/ahmed_faraj_cv.pdf"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '12px 28px',
+                                    backgroundColor: '#000',
+                                    color: 'white',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    fontWeight: 500,
+                                    fontSize: '14px',
+                                    transition: 'background 0.2s'
+                                }}
+                                onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#333' }}
+                                onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#000' }}
+                            >
+                                Download CV (PDF)
+                            </a>
+                            <a
+                                href="/ahmed_faraj_transcript_english.pdf"
+                                style={{
+                                    display: 'inline-block',
+                                    padding: '12px 28px',
+                                    backgroundColor: '#000',
+                                    color: 'white',
+                                    textDecoration: 'none',
+                                    borderRadius: '6px',
+                                    fontWeight: 500,
+                                    fontSize: '14px',
+                                    transition: 'background 0.2s'
+                                }}
+                                onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#333' }}
+                                onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#000' }}
+                            >
+                                Download Transcript (PDF)
+                            </a>
+                        </div>
                     </div>
                 </section>
+
             </main>
 
             {/* Footer */}
