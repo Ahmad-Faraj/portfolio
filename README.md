@@ -2,11 +2,11 @@
 
 Ahmed Faraj's personal portfolio website built with React, TypeScript, and Vite.
 
-## 🚀 Live Demo
+## Live Demo
 
 Visit the live site at: [https://ahmad-faraj.github.io/portfolio/](https://ahmad-faraj.github.io/portfolio/)
 
-## 📦 Local Development
+## Local Development
 
 Install dependencies:
 ```bash
@@ -28,7 +28,7 @@ Preview production build:
 npm run preview
 ```
 
-## 🌐 Deployment
+## Deployment
 
 This project is automatically deployed to GitHub Pages using GitHub Actions.
 
@@ -51,7 +51,7 @@ To enable deployment, ensure GitHub Pages is configured in your repository setti
 
 Once configured, every push to `main` will automatically deploy the latest version.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: React 18
 - **Language**: TypeScript
