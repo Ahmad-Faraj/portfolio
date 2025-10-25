@@ -59,6 +59,6 @@ Once configured, every push to `main` will automatically deploy the latest versi
 - **Styling**: Inline styles
 - **Deployment**: GitHub Pages via GitHub Actions
 
-## 📝 License
+## License
 
 © 2024 Ahmed Faraj. All rights reserved.
