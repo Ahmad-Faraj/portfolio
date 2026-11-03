@@ -16,9 +16,12 @@ export const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ENTITIES[c]);
 /** Collapse the whitespace introduced by indented template literals in content.js. */
 export const tidy = (s) => String(s).replace(/\s+/g, ' ').trim();
 
-/** External links get the usual safety attributes; internal ones do not need them. */
+/**
+ * External links and PDFs open in a new tab, so a reader who opens the CV or
+ * the paper does not lose the page. Other internal links stay in place.
+ */
 export const a = (href, text) => {
-  const rel = /^https?:/.test(href) ? ' target="_blank" rel="noreferrer"' : '';
+  const rel = /^https?:|\.pdf$/.test(href) ? ' target="_blank" rel="noreferrer"' : '';
   return `<a href="${esc(href)}"${rel}>${esc(text)}</a>`;
 };
 

@@ -198,7 +198,7 @@ export function render(C) {
 <a href="#research">Research</a>
 <a href="#opensource">Open Source</a>
 <a href="#experience">Experience</a>
-<a href="${esc(links.find((l) => l.label.startsWith('CV')).href)}">CV</a>
+${a(links.find((l) => l.label.startsWith('CV')).href, 'CV')}
 <a href="mailto:${esc(meta.email)}">Contact</a>
 </nav>
 </div>
