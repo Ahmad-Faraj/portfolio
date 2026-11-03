@@ -52,7 +52,7 @@ aside{margin-top:16px}
 .box{border:1px solid #ddd;padding:8px 10px;margin:14px 0 0}
 .box b{display:block;margin-bottom:4px;font-size:13px;font-weight:600}
 /* Buttons in the band's colours, with the same lighter pill on hover. */
-.box a{display:inline-block;border-radius:6px;background:#23211f;color:#e2dfdb;font-weight:500;padding:4px 9px;margin:3px 2px 3px 0;font-size:12px}
+.box a{display:inline-block;border-radius:0;background:#23211f;color:#e2dfdb;font-weight:500;padding:4px 9px;margin:3px 2px 3px 0;font-size:12px}
 .box a:hover,.box a:focus-visible{background:#3a3734;color:#fff;text-decoration:none;outline:none}
 .box dl{margin:0;font-size:13px}
 .box dt{font-weight:600;font-size:15px;margin-top:6px}
