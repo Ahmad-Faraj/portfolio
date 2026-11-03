@@ -37,7 +37,7 @@ header nav a:first-child{margin-left:0}
    where. Without the rail a 1920px window left a third of the page empty. */
 .page{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:44px;align-items:start;padding-top:22px;padding-bottom:8px}
 aside{margin-top:16px}
-.who img{display:block;width:190px;height:auto;border:1px solid #ccc}
+.who img{display:block;width:100%;height:auto;box-sizing:border-box;border:1px solid #ccc}
 .who p{margin:10px 0 0;font-size:14px;color:#333}
 .box{border:1px solid #ddd;padding:10px 12px;margin:16px 0 0}
 .box b{display:block;margin-bottom:4px;font-size:15px}
@@ -211,7 +211,7 @@ ${SECTIONS.map(([id, t, content]) => `<h2 id="${id}">${esc(t)}</h2>\n${content}`
 </main>
 <aside>
 <div class="who">
-<img src="${esc(meta.photo)}" width="190" height="338" alt="${esc(meta.name)}">
+<img src="${esc(meta.photoSquare)}" width="260" height="260" alt="${esc(meta.name)}">
 <p><b>${esc(meta.name)}</b><br>${meta.address.map(esc).join('<br>')}</p>
 </div>
 <div class="box">

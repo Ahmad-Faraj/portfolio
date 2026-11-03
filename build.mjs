@@ -43,6 +43,7 @@ const only = val('--only');
 const ASSETS = [
   ['static/ahmed_faraj_cv.pdf', 'ahmed_faraj_cv.pdf'],
   ['static/photo.jpg', 'photo.jpg'],
+  ['static/photo-square.jpg', 'photo-square.jpg'],
   ['static/ahmed_faraj_transcript_english.pdf', 'ahmed_faraj_transcript_english.pdf'],
   ['static/Faraj-2026-MCP-conformance-census-preprint.pdf', 'Faraj-2026-MCP-conformance-census-preprint.pdf'],
   ['static/paper-p1.jpg', 'paper-p1.jpg'],

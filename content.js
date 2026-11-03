@@ -21,6 +21,9 @@ export const meta = {
   // mtime across this file and the templates. A hand-typed one goes stale, and
   // a stale stamp argues against the very thing it is there to assert.
   photo: 'photo.jpg',
+  // 400x400, cropped from the same 900x1600 original: top of the hair to the
+  // folded arms, centred on the face. Used by v6; the others keep the tall one.
+  photoSquare: 'photo-square.jpg',
   // Postal block, the way all three reference pages carry one.
   address: [
     'Faculty of Computers & Informatics',
