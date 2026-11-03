@@ -21,30 +21,31 @@ import { esc, tidy, a, md, range } from './shared.mjs';
 
 export const info = { slug: 'v6', short: '6', name: 'arXiv' };
 
-const css = `body{margin:0;font:16px/1.45 Arial,Helvetica,sans-serif;color:#000}
+const css = `/* arXiv sets 16px on about 21px of leading; the density is most of the look. */
+body{margin:0;font:16px/1.32 Arial,Helvetica,sans-serif;color:#000}
 a{color:#0b5bd3;text-decoration:none}
 a:hover{text-decoration:underline}
-/* The band runs edge to edge as arXiv's does; its contents line up with the
-   page column below, so the wordmark and the nav frame the text. */
-header{background:#23211f;padding:10px 0}
-.in{max-width:1440px;margin:0 auto;padding:0 28px;box-sizing:border-box}
+/* Full width and flush left, as arXiv is: wordmark at the left edge, nav at
+   the right, lists free to run across the page. */
+header{background:#23211f;padding:9px 0}
+.in{padding:0 28px;box-sizing:border-box}
 header .in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5em 1.5em}
 header .mark{font:30px/1 "Courier New",Courier,monospace;letter-spacing:-.04em;color:#c4c4c4}
 header .mark b{color:#b31b1b}
 /* arXiv's nav: muted grey, a rounded lighter pill and white text on hover,
    and the last link set apart by a hairline and drawn in white. */
 header nav{display:flex;align-items:center;gap:4px}
-header nav a{color:#b9b6b2;font-weight:bold;font-size:15px;padding:6px 12px;border-radius:6px}
+header nav a{color:#b9b6b2;font:600 15px/1 "Noto Sans","Segoe UI","Helvetica Neue",Arial,sans-serif;padding:8px 12px;border-radius:6px}
 header nav a:hover,header nav a:focus-visible{background:#3a3734;color:#fff;text-decoration:none;outline:none}
 header nav i{width:1px;height:26px;background:#4a4744;margin:0 10px}
 header nav a.end{color:#fff}
 /* Two columns on a wide screen: the text, and a narrow rail holding who and
-   where. Without the rail a 1920px window left a third of the page empty. */
-.page{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:44px;align-items:start;padding-top:22px;padding-bottom:8px}
+   where. */
+.page{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:40px;align-items:start;padding-top:8px;padding-bottom:8px}
 aside{margin-top:16px}
 .who img{display:block;width:100%;height:auto;box-sizing:border-box;border:1px solid #ccc}
 .who p{margin:10px 0 0;font-size:14px;color:#333}
-.box{border:1px solid #ddd;padding:10px 12px;margin:16px 0 0}
+.box{border:1px solid #ddd;padding:8px 10px;margin:14px 0 0}
 .box b{display:block;margin-bottom:4px;font-size:15px}
 /* Buttons in the band's colours, with the same lighter pill on hover. */
 .box a{display:inline-block;border-radius:6px;background:#23211f;color:#e2dfdb;font-weight:bold;padding:4px 10px;margin:3px 2px 3px 0;font-size:13px}
@@ -52,17 +53,17 @@ aside{margin-top:16px}
 .box dl{margin:0;font-size:14px}
 .box dt{font-weight:bold;font-size:17px;margin-top:6px}
 .box dd{margin:0;color:#444}
-h2{font-size:27px;margin:30px 0 10px}
+h2{font-size:26px;margin:28px 0 16px}
 ul{padding-left:50px;margin:0}
-li{margin:3px 0}
-/* Findings and pull requests under an entry sit in the "includes:" register:
-   smaller and indented, so the entry line stays the thing you scan. */
-ul ul{padding-left:22px;margin:3px 0 8px;font-size:15px}
-.inc{display:block;font-size:15px}
+li{margin:0}
+/* Nested lines keep the entry's size and set solid, as arXiv's "includes:"
+   lines do. */
+ul ul{padding-left:22px;margin:0}
+.inc{display:block}
 .st{color:#444}
-img.paper{float:right;width:150px;height:auto;margin:0 0 12px 20px;border:1px solid #ccc}
+img.paper{float:right;width:108px;height:auto;margin:0 0 8px 20px;border:1px solid #ccc}
 h2{clear:both}
-footer{clear:both;background:#efefef;margin-top:40px;padding:18px 0;font-size:14px;color:#444}
+footer{clear:both;background:#efefef;margin-top:36px;padding:14px 0;font-size:14px;color:#444}
 footer a{margin-right:1.4em}
 @media (max-width:900px){
 .page{grid-template-columns:1fr;gap:0}
@@ -100,7 +101,7 @@ export function render(C) {
     .map(
       (r) =>
         (r.thumb
-          ? `<a href="${esc(r.pdf)}" target="_blank" rel="noreferrer"><img class="paper" src="${esc(r.thumb)}" width="150" height="212" alt="First page of ${esc(r.title)}"></a>\n`
+          ? `<a href="${esc(r.pdf)}" target="_blank" rel="noreferrer"><img class="paper" src="${esc(r.thumb)}" width="108" height="153" alt="First page of ${esc(r.title)}"></a>\n`
           : '') +
         ul([
           entry(
