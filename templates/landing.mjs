@@ -30,6 +30,11 @@ const NOTES = {
     '~330 B',
     'Narrow left rail with photo, address and section links; content in a wide right column. Held together by a table, as pages of this vintage are.',
   ],
+  v6: [
+    'arxiv.org',
+    '~1.7 kB',
+    'A dark band with a grey wordmark and a red accent, plain nav on the right, one lead paragraph and a bordered box, then bold sections in arXiv’s entry form: Name (code links) detail, and includes: a; b; c.',
+  ],
 };
 
 const css = `body{max-width:44em;margin:3em auto;padding:0 1.5em;font:16px/1.55 Georgia,serif}
@@ -48,9 +53,9 @@ export function render(C, versions) {
     })
     .join('\n');
 
-  const body = `<h1>Ahmed Faraj: five versions</h1>
+  const body = `<h1>Ahmed Faraj: six versions</h1>
 
-<p>Same content, five pages in the idiom of the classic CS homepage. Each one is
+<p>Same content, six pages: five in the idiom of the classic CS homepage, one after arxiv.org. Each one is
 modelled on a specific page, measured rather than remembered:
 <a href="https://www.stroustrup.com/">stroustrup.com</a> (3.8 KB, 141 B of CSS),
 <a href="http://nil.lcs.mit.edu/rtm/">nil.lcs.mit.edu/rtm</a> (2.0 KB, none), and

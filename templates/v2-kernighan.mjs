@@ -72,7 +72,7 @@ export function render(C) {
       ul([
         cite(r) +
           '\n' +
-          ul(r.points.map(esc)) +
+          ul(r.points.map(md)) +
           `\n<p>\n${r.artifacts.map((x) => a(x.href, x.label)).join(' &nbsp; ')}`,
       ])
     )
