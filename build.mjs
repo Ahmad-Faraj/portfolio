@@ -25,6 +25,7 @@ const SITE = 'https://ahmad-faraj.github.io/portfolio/';
 const ASSETS = [
   ['static/ahmed_faraj_cv.pdf', 'ahmed_faraj_cv.pdf'],
   ['static/photo-square.jpg', 'photo-square.jpg'],
+  ['static/preview.jpg', 'preview.jpg'],
   ['static/ahmed_faraj_transcript_english.pdf', 'ahmed_faraj_transcript_english.pdf'],
   ['static/Faraj-2026-MCP-conformance-census-preprint.pdf', 'Faraj-2026-MCP-conformance-census-preprint.pdf'],
   ['static/paper-p1.jpg', 'paper-p1.jpg'],
@@ -84,7 +85,8 @@ async function main() {
   await mkdir(DIST, { recursive: true });
 
   const { css, body, bg } = render(CONTENT);
-  const html = page({ title: C.meta.name, desc: DESC, css, body, bg, url: SITE, image: C.meta.photoSquare });
+  // LinkedIn ignores titles under 15 characters and falls back to the page's wordmark.
+  const html = page({ title: `${C.meta.name} · Software Engineer`, desc: DESC, css, body, bg, url: SITE, image: 'preview.jpg' });
   await writeFile(join(DIST, 'index.html'), html, 'utf8');
 
   for (const [from, name] of ASSETS) {

@@ -89,10 +89,10 @@ export const page = ({ title, desc, css, body, bg, url, image }) =>
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${esc(url)}">
 <meta property="og:image" content="${esc(url + image)}">
-<meta property="og:image:width" content="400">
-<meta property="og:image:height" content="400">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
 <meta property="og:image:alt" content="${esc(title)}">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,${MARK}">
 ${css ? `<style>${rules(css)}</style>\n` : ''}<body${bg ? ` bgcolor="${bg}"` : ''}>
 ${body}`;

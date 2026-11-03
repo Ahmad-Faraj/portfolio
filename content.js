@@ -185,7 +185,8 @@ export const openSource = [
     note: 'CNCF, ML on Kubernetes',
     role: 'Org member',
     roleHref: 'https://github.com/kubeflow/internal-acls/pull/982',
-    from: 'Sep 2026',
+    // Membership date (internal-acls#982 merged 26 Oct 2026); first PRs were Sep 2026.
+    from: 'Oct 2026',
     to: null,
     href: 'https://github.com/search?q=is%3Apr+author%3AAhmad-Faraj+org%3Akubeflow&type=pullrequests',
     items: [
@@ -499,7 +500,7 @@ export const achievements = [
     items: [
       { text: 'AWS Certified Solutions Architect, Associate (SAA-C03).', date: '2026', href: 'https://www.credly.com/badges/a5eb4751-17bd-4716-8ec5-40380e701ea9/public_url', hrefLabel: 'Credly' },
       // The path is /certificate/ (singular). The /certificates/ form in the CV 404s.
-      { text: 'Redis Certified Associate Developer.', date: '2026', href: 'https://university.redis.io/certificate/ix59xm1sikrqy1', hrefLabel: 'Redis' },
+      { text: 'Redis Associate Software Operator.', date: '2026', href: 'https://university.redis.io/certificate/ix59xm1sikrqy1', hrefLabel: 'Redis' },
     ],
   },
 ];
@@ -510,7 +511,7 @@ export const community = [
     href: 'https://www.youtube.com/@Ahmad_Faraj/videos', hrefLabel: 'Channel',
   },
   {
-    text: 'ICPC SCU, IT Head: mentored 1K+ students in data structures and algorithms, authored 50+ ECPC problems.',
+    text: 'ICPC SCU, Vice Head of IT: mentored 1K+ students in data structures and algorithms, authored 50+ ECPC problems.',
     href: 'https://github.com/Ahmad-Faraj/icpc-scu', hrefLabel: 'Archive',
   },
   {
