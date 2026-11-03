@@ -41,8 +41,10 @@ aside{margin-top:16px}
 .who p{margin:10px 0 0;font-size:14px;color:#333}
 .box{border:1px solid #ddd;padding:10px 12px;margin:16px 0 0}
 .box b{display:block;margin-bottom:4px;font-size:15px}
-.box a{display:inline-block;border:1px solid #bbb;border-radius:2px;background:#f2f2f2;color:#000;padding:1px 8px;margin:3px 2px 3px 0;font-size:14px}
-.box a:hover{background:#e4e4e4;text-decoration:none}
+/* Buttons in the band's colours: its black, its light bold text, and the
+   wordmark's red on hover and focus. */
+.box a{display:inline-block;border-radius:2px;background:#1c1c1c;color:#e8e8e8;font-weight:bold;padding:3px 9px;margin:3px 2px 3px 0;font-size:13px}
+.box a:hover,.box a:focus-visible{background:#b31b1b;color:#fff;text-decoration:none;outline:none}
 .box dl{margin:0;font-size:14px}
 .box dt{font-weight:bold;font-size:17px;margin-top:6px}
 .box dd{margin:0;color:#444}
