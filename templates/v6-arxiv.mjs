@@ -24,21 +24,28 @@ export const info = { slug: 'v6', short: '6', name: 'arXiv' };
 const css = `body{margin:0;font:16px/1.45 Arial,Helvetica,sans-serif;color:#000}
 a{color:#0b5bd3;text-decoration:none}
 a:hover{text-decoration:underline}
-/* The band. arXiv runs it edge to edge and sets the nav in bold light grey. */
-header{background:#1c1c1c;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5em 1.5em;padding:12px 28px}
+/* The band runs edge to edge as arXiv's does; its contents line up with the
+   page column below, so the wordmark and the nav frame the text. */
+header{background:#1c1c1c;padding:12px 0}
+.in{max-width:1440px;margin:0 auto;padding:0 28px;box-sizing:border-box}
+header .in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5em 1.5em}
 header .mark{font:30px/1 "Courier New",Courier,monospace;letter-spacing:-.04em;color:#c4c4c4}
 header .mark b{color:#b31b1b}
 header nav a{color:#e8e8e8;font-weight:bold;font-size:15px;margin-left:1.6em}
 header nav a:first-child{margin-left:0}
-/* arXiv keeps its text block to roughly 960px and lets the lists run wider. */
-main{padding:22px 28px 8px;max-width:1100px}
-.lead{display:flex;gap:28px;align-items:flex-start}
-.lead>div{max-width:940px}
-.lead img{width:112px;height:auto;border:1px solid #ccc}
-.box{border:1px solid #ddd;padding:10px 12px;margin:16px 0 6px;max-width:916px}
-.box b{display:block;margin-bottom:4px}
-.box a{display:inline-block;border:1px solid #bbb;border-radius:2px;background:#f2f2f2;color:#000;padding:1px 8px;margin:3px 2px 3px 0;font-size:15px}
+/* Two columns on a wide screen: the text, and a narrow rail holding who and
+   where. Without the rail a 1920px window left a third of the page empty. */
+.page{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:44px;align-items:start;padding-top:22px;padding-bottom:8px}
+aside{margin-top:16px}
+.who img{display:block;width:190px;height:auto;border:1px solid #ccc}
+.who p{margin:10px 0 0;font-size:14px;color:#333}
+.box{border:1px solid #ddd;padding:10px 12px;margin:16px 0 0}
+.box b{display:block;margin-bottom:4px;font-size:15px}
+.box a{display:inline-block;border:1px solid #bbb;border-radius:2px;background:#f2f2f2;color:#000;padding:1px 8px;margin:3px 2px 3px 0;font-size:14px}
 .box a:hover{background:#e4e4e4;text-decoration:none}
+.box dl{margin:0;font-size:14px}
+.box dt{font-weight:bold;font-size:17px;margin-top:6px}
+.box dd{margin:0;color:#444}
 h2{font-size:27px;margin:30px 0 10px}
 ul{padding-left:50px;margin:0}
 li{margin:3px 0}
@@ -49,13 +56,18 @@ ul ul{padding-left:22px;margin:3px 0 8px;font-size:15px}
 .st{color:#444}
 img.paper{float:right;width:150px;height:auto;margin:0 0 12px 20px;border:1px solid #ccc}
 h2{clear:both}
-footer{clear:both;background:#efefef;margin-top:40px;padding:18px 28px;font-size:14px;color:#444}
+footer{clear:both;background:#efefef;margin-top:40px;padding:18px 0;font-size:14px;color:#444}
 footer a{margin-right:1.4em}
+@media (max-width:900px){
+.page{grid-template-columns:1fr;gap:0}
+aside{order:-1;margin:0 0 6px}
+.glance{display:none}
+.who{display:flex;gap:14px;align-items:flex-end}
+.who img{width:80px}
+}
 @media (max-width:640px){
-header,main,footer{padding-left:16px;padding-right:16px}
+.in{padding-left:16px;padding-right:16px}
 header nav a{margin:0 .7em 0 0;font-size:13px}
-.lead{flex-direction:column-reverse;gap:14px}
-.lead img{width:72px}
 ul{padding-left:22px}
 img.paper{width:96px}
 }`;
@@ -63,7 +75,7 @@ img.paper{width:96px}
 const bg = '#FFFFFF';
 
 export function render(C) {
-  const { meta, narrative, links, experience, research, openSource, projects, education, achievements, community, skills } = C;
+  const { meta, narrative, links, experience, research, openSource, projects, education, achievements, community, skills, facts } = C;
 
   const ul = (items) => `<ul>\n${items.map((i) => `<li>${i}</li>`).join('\n')}\n</ul>`;
   const code = (s) => `<b>${esc(s)}</b>`;
@@ -180,6 +192,7 @@ export function render(C) {
   ];
 
   const body = `<header>
+<div class="in">
 <a class="mark" href="./" aria-label="${esc(meta.name)}">ahmed<b>.</b>faraj</a>
 <nav>
 <a href="#research">Research</a>
@@ -188,24 +201,36 @@ export function render(C) {
 <a href="${esc(links.find((l) => l.label.startsWith('CV')).href)}">CV</a>
 <a href="mailto:${esc(meta.email)}">Contact</a>
 </nav>
+</div>
 </header>
+<div class="in page">
 <main>
-<div class="lead">
-<div>
 ${narrative.slice(0, 2).map((p) => `<p>${md(p)}</p>`).join('\n')}
+
+${SECTIONS.map(([id, t, content]) => `<h2 id="${id}">${esc(t)}</h2>\n${content}`).join('\n\n')}
+</main>
+<aside>
+<div class="who">
+<img src="${esc(meta.photo)}" width="190" height="338" alt="${esc(meta.name)}">
+<p><b>${esc(meta.name)}</b><br>${meta.address.map(esc).join('<br>')}</p>
+</div>
 <div class="box">
 <b>Find me elsewhere:</b>
 ${links.map((l) => a(l.href, l.label)).join('\n')}
 </div>
+<div class="box glance">
+<b>At a glance:</b>
+<dl>
+${facts.map((f) => `<dt>${esc(f.k)}</dt><dd>${esc(f.v)}</dd>`).join('\n')}
+</dl>
 </div>
-<img src="${esc(meta.photo)}" width="112" height="199" alt="${esc(meta.name)}">
+</aside>
 </div>
-
-${SECTIONS.map(([id, t, content]) => `<h2 id="${id}">${esc(t)}</h2>\n${content}`).join('\n\n')}
-</main>
 <footer>
+<div class="in">
 ${a('mailto:' + meta.email, meta.email)}${a('https://github.com/' + meta.handle, 'github.com/' + meta.handle)}${esc(meta.address.slice(1).join(', '))}
 <br>Last updated ${esc(meta.stamp)}
+</div>
 </footer>
 `;
 

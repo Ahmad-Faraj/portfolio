@@ -59,7 +59,7 @@ third person and makes it funny, which only works once nobody needs convincing.
 | v3 Stroustrup | stroustrup.com | **0 B** | 11.1 kB |
 | v4 Faculty | generic department page | 229 B | 13.7 kB |
 | v5 Sidebar | two-column department page | 324 B | 20.7 kB |
-| v6 arXiv | arxiv.org front page | 1695 B | 23.8 kB |
+| v6 arXiv | arxiv.org front page | 2.1 kB | 24.7 kB |
 
 v2 departs from bwk in four small ways, all deliberate: `2.5em` side margins so
 the text does not sit against the window edge, a hairline rule under each `h3`,
