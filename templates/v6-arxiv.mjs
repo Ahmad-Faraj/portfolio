@@ -26,13 +26,18 @@ a{color:#0b5bd3;text-decoration:none}
 a:hover{text-decoration:underline}
 /* The band runs edge to edge as arXiv's does; its contents line up with the
    page column below, so the wordmark and the nav frame the text. */
-header{background:#1c1c1c;padding:12px 0}
+header{background:#23211f;padding:10px 0}
 .in{max-width:1440px;margin:0 auto;padding:0 28px;box-sizing:border-box}
 header .in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5em 1.5em}
 header .mark{font:30px/1 "Courier New",Courier,monospace;letter-spacing:-.04em;color:#c4c4c4}
 header .mark b{color:#b31b1b}
-header nav a{color:#e8e8e8;font-weight:bold;font-size:15px;margin-left:1.6em}
-header nav a:first-child{margin-left:0}
+/* arXiv's nav: muted grey, a rounded lighter pill and white text on hover,
+   and the last link set apart by a hairline and drawn in white. */
+header nav{display:flex;align-items:center;gap:4px}
+header nav a{color:#b9b6b2;font-weight:bold;font-size:15px;padding:6px 12px;border-radius:6px}
+header nav a:hover,header nav a:focus-visible{background:#3a3734;color:#fff;text-decoration:none;outline:none}
+header nav i{width:1px;height:26px;background:#4a4744;margin:0 10px}
+header nav a.end{color:#fff}
 /* Two columns on a wide screen: the text, and a narrow rail holding who and
    where. Without the rail a 1920px window left a third of the page empty. */
 .page{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:44px;align-items:start;padding-top:22px;padding-bottom:8px}
@@ -41,10 +46,9 @@ aside{margin-top:16px}
 .who p{margin:10px 0 0;font-size:14px;color:#333}
 .box{border:1px solid #ddd;padding:10px 12px;margin:16px 0 0}
 .box b{display:block;margin-bottom:4px;font-size:15px}
-/* Buttons in the band's colours: its black, its light bold text, and the
-   wordmark's red on hover and focus. */
-.box a{display:inline-block;border-radius:2px;background:#1c1c1c;color:#e8e8e8;font-weight:bold;padding:3px 9px;margin:3px 2px 3px 0;font-size:13px}
-.box a:hover,.box a:focus-visible{background:#b31b1b;color:#fff;text-decoration:none;outline:none}
+/* Buttons in the band's colours, with the same lighter pill on hover. */
+.box a{display:inline-block;border-radius:6px;background:#23211f;color:#e2dfdb;font-weight:bold;padding:4px 10px;margin:3px 2px 3px 0;font-size:13px}
+.box a:hover,.box a:focus-visible{background:#3a3734;color:#fff;text-decoration:none;outline:none}
 .box dl{margin:0;font-size:14px}
 .box dt{font-weight:bold;font-size:17px;margin-top:6px}
 .box dd{margin:0;color:#444}
@@ -69,7 +73,10 @@ aside{order:-1;margin:0 0 6px}
 }
 @media (max-width:640px){
 .in{padding-left:16px;padding-right:16px}
-header nav a{margin:0 .7em 0 0;font-size:13px}
+header nav{gap:0}
+header nav a{padding:5px 7px;font-size:13px}
+header nav a:first-child{padding-left:0}
+header nav i{margin:0 4px;height:20px}
 ul{padding-left:22px}
 img.paper{width:96px}
 }`;
@@ -201,7 +208,8 @@ export function render(C) {
 <a href="#opensource">Open Source</a>
 <a href="#experience">Experience</a>
 ${a(links.find((l) => l.label.startsWith('CV')).href, 'CV')}
-<a href="mailto:${esc(meta.email)}">Contact</a>
+<i></i>
+<a class="end" href="mailto:${esc(meta.email)}">Contact</a>
 </nav>
 </div>
 </header>
