@@ -2,8 +2,8 @@
 # https://ahmad-faraj.github.io/portfolio/, the URL printed on the CV.
 #
 # There are no dependencies, so there is nothing to install and no lockfile to
-# restore: `npm run ship v6` is `node build.mjs --clean --flat --only v6`, which
-# writes dist/index.html plus its assets, ready to serve as-is.
+# restore: `npm run build` writes dist/index.html plus its assets, ready to
+# serve as-is.
 name: Deploy to GitHub Pages
 
 on:
@@ -31,7 +31,7 @@ jobs:
           node-version: '20'
 
       - name: Build
-        run: npm run ship v6
+        run: npm run build
 
       - uses: actions/configure-pages@v4
 

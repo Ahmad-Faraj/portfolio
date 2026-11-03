@@ -2,13 +2,14 @@
   "name": "ahmed-faraj-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Static portfolio for Ahmed Faraj. One content file, five typographic treatments, no dependencies.",
+  "description": "Static portfolio for Ahmed Faraj, after the arxiv.org front page. One content file, no dependencies.",
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
     "start": "node build.mjs && node serve.mjs",
-    "serve": "node serve.mjs",
-    "ship": "node build.mjs --clean --flat --only"
+    "serve": "node serve.mjs"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }

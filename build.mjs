@@ -2,11 +2,7 @@
 /**
  * Zero-dependency static site generator.
  *
- *   node build.mjs                     all five versions + landing page
- *   node build.mjs --only v4           just one version
- *   node build.mjs --clean             strip the preview switcher (ship build)
- *   node build.mjs --clean --only v4 --flat
- *                                      emit dist/index.html ready to deploy
+ *   node build.mjs      writes dist/index.html and its assets, ready to deploy
  */
 import { mkdir, writeFile, rm, copyFile, access, stat, readdir } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
@@ -14,27 +10,13 @@ import { fileURLToPath } from 'node:url';
 
 import * as C from './content.js';
 import { page, rules } from './templates/shared.mjs';
-import * as v1 from './templates/v1-morris.mjs';
-import * as v2 from './templates/v2-kernighan.mjs';
-import * as v3 from './templates/v3-stroustrup.mjs';
-import * as v4 from './templates/v4-faculty.mjs';
-import * as v5 from './templates/v5-sidebar.mjs';
-import * as v6 from './templates/v6-arxiv.mjs';
-import * as landing from './templates/landing.mjs';
+import { render } from './templates/arxiv.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DIST = resolve(HERE, 'dist');
 
-const TEMPLATES = [v1, v2, v3, v4, v5, v6];
-const VERSIONS = TEMPLATES.map((t) => t.info);
-
-const argv = process.argv.slice(2);
-const has = (f) => argv.includes(f);
-const val = (f) => (argv.includes(f) ? argv[argv.indexOf(f) + 1] : null);
-
-const clean = has('--clean');
-const flat = has('--flat');
-const only = val('--only');
+/** Where the site is served. The link-preview tags need absolute URLs. */
+const SITE = 'https://ahmad-faraj.github.io/portfolio/';
 
 /**
  * Static assets copied next to every page.
@@ -42,7 +24,6 @@ const only = val('--only');
  */
 const ASSETS = [
   ['static/ahmed_faraj_cv.pdf', 'ahmed_faraj_cv.pdf'],
-  ['static/photo.jpg', 'photo.jpg'],
   ['static/photo-square.jpg', 'photo-square.jpg'],
   ['static/ahmed_faraj_transcript_english.pdf', 'ahmed_faraj_transcript_english.pdf'],
   ['static/Faraj-2026-MCP-conformance-census-preprint.pdf', 'Faraj-2026-MCP-conformance-census-preprint.pdf'],
@@ -93,79 +74,31 @@ async function contentStamp() {
          `${clock} ${zone} ${part({ year: 'numeric' })}`;
 }
 
-async function copyAssets(intoDirs) {
-  for (const [from, name] of ASSETS) {
-    const src = resolve(HERE, from);
-    if (!(await exists(src))) {
-      console.warn(`  ! asset missing, skipped: ${name}`);
-      continue;
-    }
-    for (const dir of intoDirs) await copyFile(src, join(dir, name));
-  }
-}
-
-async function emit(dir, html) {
-  await mkdir(dir, { recursive: true });
-  await writeFile(join(dir, 'index.html'), html, 'utf8');
-  return Buffer.byteLength(html, 'utf8');
-}
-
 async function main() {
   // A module namespace object is sealed, so the live stamp is layered on with a
   // copy rather than assigned into the imported content.
   const stamp = await contentStamp();
   const CONTENT = { ...C, meta: { ...C.meta, stamp } };
 
-  const picked = only ? TEMPLATES.filter((t) => t.info.slug === only) : TEMPLATES;
-  if (!picked.length) {
-    console.error(`Unknown version "${only}". Options: ${VERSIONS.map((v) => v.slug).join(', ')}`);
-    process.exit(1);
-  }
-
   await rm(DIST, { recursive: true, force: true });
   await mkdir(DIST, { recursive: true });
 
-  console.log(`\n  build → dist/${clean ? '   [clean: no switcher]' : ''}${flat ? '   [flat]' : ''}\n`);
+  const { css, body, bg } = render(CONTENT);
+  const html = page({ title: C.meta.name, desc: DESC, css, body, bg, url: SITE, image: C.meta.photoSquare });
+  await writeFile(join(DIST, 'index.html'), html, 'utf8');
 
-  const dirs = [];
-
-  for (const t of picked) {
-    const { css, body, bg } = t.render(CONTENT);
-    const html = page({
-      title: C.meta.name,
-      desc: DESC,
-      css, body, bg,
-      current: t.info.slug,
-      versions: VERSIONS,
-      clean: clean || flat,
-    });
-    // --flat puts the single chosen version at the root, ready to deploy as-is.
-    const dir = flat && picked.length === 1 ? DIST : join(DIST, t.info.slug);
-    const bytes = await emit(dir, html);
-    dirs.push(dir);
-    // Measured on what ships, which is the rules with the comments stripped out.
-    const cssB = Buffer.byteLength(rules(css), 'utf8');
-    console.log(
-      `  ${t.info.slug}  ${t.info.name.padEnd(8)} ${(bytes / 1024).toFixed(1).padStart(5)} kB html` +
-      `   ${String(cssB).padStart(4)} B css`
-    );
+  for (const [from, name] of ASSETS) {
+    const src = resolve(HERE, from);
+    if (!(await exists(src))) {
+      console.warn(`  ! asset missing, skipped: ${name}`);
+      continue;
+    }
+    await copyFile(src, join(DIST, name));
   }
 
-  if (!flat) {
-    const { css, body, bg } = landing.render(CONTENT, picked.map((t) => t.info));
-    const bytes = await emit(DIST, page({
-      title: `${C.meta.name}, portfolio versions`,
-      desc: 'Six pages in the idiom of the classic CS homepage and arxiv.org.',
-      css, body, bg,
-      current: '', versions: VERSIONS, clean: true,
-    }));
-    dirs.push(DIST);
-    console.log(`  --  ${'landing'.padEnd(8)} ${(bytes / 1024).toFixed(1).padStart(5)} kB html`);
-  }
-
-  await copyAssets(dirs);
-
-  console.log(`\n  done. serve with:  npm start\n`);
+  // Measured on what ships, which is the rules with the comments stripped out.
+  const kb = (Buffer.byteLength(html, 'utf8') / 1024).toFixed(1);
+  console.log(`\n  dist/index.html  ${kb} kB html, ${Buffer.byteLength(rules(css), 'utf8')} B css\n`);
 }
 
 main().catch((err) => {

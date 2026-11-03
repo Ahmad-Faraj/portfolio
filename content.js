@@ -166,9 +166,9 @@ export const research = [
     ],
     // Order matters: v1, v3 and v5 link the title to [0], v3 labels [1] as SEP-2145.
     artifacts: [
-      { label: 'Paper (Zenodo)',  href: 'https://doi.org/10.5281/zenodo.22996025' },
+      { label: 'doi',             href: 'https://doi.org/10.5281/zenodo.22996025' },
       { label: 'SEP-2145',        href: 'https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2145#issuecomment-5142039121' },
-      { label: 'Data and code',   href: 'https://doi.org/10.5281/zenodo.22981443' },
+      { label: 'data',            href: 'https://doi.org/10.5281/zenodo.22981443' },
       { label: 'Harness',         href: 'https://github.com/Ahmad-Faraj/mcp-conformance' },
     ],
   },
@@ -176,7 +176,8 @@ export const research = [
 
 /**
  * `state` is rendered verbatim. Keep it truthful. Re-checked on GitHub 3 Nov 2026.
- * `role` and `roleHref` are optional; only the arXiv version shows them.
+ * `role`, `roleHref` and `code` are optional; `code` is the bold short name in
+ * the entry line and defaults to the org name, lowercased.
  */
 export const openSource = [
   {
@@ -269,6 +270,7 @@ export const openSource = [
   },
   {
     org: 'Other CNCF',
+    code: 'cncf',
     note: 'Karmada, KubeStellar, kured, Vitess, ORAS',
     from: 'Jun 2026',
     to: null,
@@ -352,6 +354,7 @@ export const openSource = [
   },
   {
     org: 'Elsewhere',
+    code: 'hyperledger',
     note: 'Rust, Go',
     from: '2025',
     to: null,
@@ -369,6 +372,7 @@ export const openSource = [
 export const projects = [
   {
     name: 'Orbit Onboard on AWS',
+    line: "Ranks a codebase's 13K+ definitions by call centrality to tell a new contributor what to read first; serverless on AWS.",
     tag: 'Python · AWS Lambda · SQS · DynamoDB',
     date: 'Jun 2026',
     blurb: `A new contributor opens an unfamiliar repository and has no idea what
@@ -388,24 +392,8 @@ export const projects = [
     ],
   },
   {
-    name: 'mcpprobe',
-    tag: 'Python · Docker · JSON-RPC',
-    date: 'Jul 2026',
-    blurb: `The measurement harness behind the conformance study. Installs an
-            arbitrary MCP server, runs it under --cap-drop ALL with no host mounts,
-            and grades it against the protocol version it negotiates rather than
-            the latest spec.`,
-    points: [
-      'Eight conformance checks over the protocol lifecycle: handshake, ping, tool schema meta-validation, unknown-tool and invalid-argument handling, malformed-frame survival, stdout purity.',
-      'Two execution modes (ephemeral online, and two-phase offline where measurement runs with --network=none), verified to produce statistically indistinguishable results.',
-      'Every reported number regenerates from released raw transcripts at a pinned harness tag.',
-    ],
-    linksOut: [
-      { label: 'Repository', href: 'https://github.com/Ahmad-Faraj/mcp-conformance' },
-    ],
-  },
-  {
     name: 'Star Pupil',
+    line: 'A student that believes exactly what you teach it, then sits an exam; every lost mark traces back to a sentence in your lesson.',
     tag: 'TypeScript · React Flow · LLM',
     date: 'Jul 2026',
     blurb: `Teaching something is the fastest way to find out you never understood
@@ -423,6 +411,7 @@ export const projects = [
   },
   {
     name: 'Stet',
+    line: 'Plants misprints in your own notes, sets them as a galley proof, and hands you the red pencil.',
     tag: 'TypeScript · Next.js · LLM',
     date: 'Jul 2026',
     blurb: `Re-reading your notes feels like studying and is not. Recognition is
@@ -438,21 +427,8 @@ export const projects = [
     ],
   },
   {
-    name: 'Event Streaming System',
-    tag: 'Go · Kafka · Redis',
-    date: 'Ongoing',
-    blurb: `A distributed event pipeline that records and processes real-time
-            events with a top-N popularity ranking, exposed over REST.`,
-    points: [
-      'Producer/consumer pipeline over Kafka with Redis-backed top-N ranking under concurrent writes.',
-      'REST endpoints for detail lookup and querying, with explicit concurrency and error handling.',
-    ],
-    linksOut: [
-      { label: 'Walkthrough', href: 'https://www.youtube.com/@Ahmad_Faraj/playlists' },
-    ],
-  },
-  {
     name: 'jlox',
+    line: 'A tree-walking interpreter for the Lox language on the JVM, with a resolver pass for closures and lexical scope.',
     tag: 'Java · JVM',
     date: '2025',
     blurb: `A recursive-descent interpreter for the Lox language on the JVM:
@@ -469,6 +445,7 @@ export const projects = [
   },
   {
     name: 'Jack OS',
+    line: 'An operating system for the 16-bit Hack computer, built up from NAND gates through a stack VM.',
     tag: 'Jack · HDL · VM',
     date: '2025',
     blurb: `An operating system for the 16-bit Hack computer, written in Jack:
@@ -506,7 +483,7 @@ export const achievements = [
   {
     group: 'Competitive programming',
     items: [
-      { text: 'ACPC Finalist twice: 84th at the Arab Collegiate Programming Contest, 59th at ECPC, 1st in university.', date: 'Aug 2025', href: 'https://icpc.global/ICPCID/XRR2FB1ZXTL5', hrefLabel: 'ICPC' },
+      { text: 'ACPC Finalist twice; in 2025, 84th at the Arab Collegiate Programming Contest, 59th at ECPC, 1st in university.', date: 'Aug 2025', href: 'https://icpc.global/ICPCID/XRR2FB1ZXTL5', hrefLabel: 'ICPC' },
       { text: 'Meta Hacker Cup: Round 2 finalist, 1,480 of 5,972.', date: 'Oct 2025', href: 'https://www.facebook.com/codingcompetitions/hacker-cup/2025/certificate/3769267336631460', hrefLabel: 'Meta' },
       { text: 'Codeforces Expert, top 1% in Egypt.', date: null, href: 'https://codeforces.com/profile/Ahmed_Faraj', hrefLabel: 'Codeforces' },
       { text: 'LeetCode Knight, top 2% globally.', date: null, href: 'https://leetcode.com/u/Ahmed_Faraj/', hrefLabel: 'LeetCode' },
@@ -556,7 +533,7 @@ export const skills = [
 /** Small numbers worth stating plainly. Used by versions that show a header strip. */
 export const facts = [
   { k: '6,106', v: 'MCP servers executed' },
-  { k: '6',     v: 'maintainers fixed their servers' },
+  { k: '15',    v: 'merged CNCF pull requests' },
   { k: '2nd',   v: 'in class, GPA 3.60' },
   { k: '3,000+',v: 'problems solved' },
 ];

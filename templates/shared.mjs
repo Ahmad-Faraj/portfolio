@@ -46,30 +46,15 @@ export const md = (s) =>
 export const dot = (...parts) => parts.filter(Boolean).join(' · ');
 
 /**
- * Review-only version switcher. Plain text, no styling of its own, first thing
- * in the document. Omitted from `--clean` builds.
- */
-export const switcher = (current, versions) =>
-  `<p><small>preview: ` +
-  versions
-    .map((v) => (v.slug === current ? `<b>${esc(v.short)}</b>` : `<a href="../${v.slug}/">${esc(v.short)}</a>`))
-    .join(' ') +
-  ` <a href="../">all</a></small></p>\n`;
-
-/**
- * Favicon: a lit bulb, drawn as three primitives because anything finer than
- * that (a filament, rays) turns to mush at 16 px. Inline SVG in a data URI, so
- * the page still makes no network requests.
- *
- * The glass is amber so it reads on a light tab strip and on a dark one; the
- * base is mid-grey for the same reason. `#` must be written `%23`: unencoded it
+ * Favicon: the band's near-black with the wordmark's red dot, the dot of
+ * `ahmed.faraj`. Square, as the buttons are. Inline SVG in a data URI, so the
+ * page still makes no network requests. `#` must be written `%23`: unencoded it
  * would start a URL fragment and cut the document short.
  */
-const BULB =
+const MARK =
   `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'>` +
-  `<circle cx='8' cy='6.2' r='4.6' fill='%23f5b301'/>` +
-  `<rect x='5.6' y='10.6' width='4.8' height='1.9' rx='.5' fill='%238d8d8d'/>` +
-  `<rect x='6.4' y='13.1' width='3.2' height='1.9' rx='.7' fill='%238d8d8d'/>` +
+  `<rect width='16' height='16' fill='%2323211f'/>` +
+  `<rect x='6' y='9' width='4' height='4' fill='%23b31b1b'/>` +
   `</svg>`;
 
 /**
@@ -87,14 +72,27 @@ export const rules = (css) =>
  * `<html>`, `<head>` and `<body>` are omitted; they are optional in HTML5 and
  * the parser inserts them. danluu.com ships exactly this way. `color-scheme:
  * light` pins the page white so a reader in dark mode still sees paper.
+ *
+ * The Open Graph and Twitter tags are what LinkedIn, WhatsApp, Slack and X read
+ * to draw a link preview. Their image must be an absolute URL.
  */
-export const page = ({ title, desc, css, body, current, versions, clean, bg }) =>
+export const page = ({ title, desc, css, body, bg, url, image }) =>
   `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
-<link rel="icon" href="data:image/svg+xml,${BULB}">
+<link rel="canonical" href="${esc(url)}">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:url" content="${esc(url)}">
+<meta property="og:image" content="${esc(url + image)}">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="400">
+<meta property="og:image:alt" content="${esc(title)}">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,${MARK}">
 ${css ? `<style>${rules(css)}</style>\n` : ''}<body${bg ? ` bgcolor="${bg}"` : ''}>
-${clean ? '' : switcher(current, versions)}${body}`;
+${body}`;

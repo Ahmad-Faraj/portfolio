@@ -1,5 +1,5 @@
 /**
- * v6: arXiv
+ * The page, after the arxiv.org front page.
  *
  * After the arxiv.org front page. What is taken from it:
  *
@@ -18,8 +18,6 @@
  * logo itself.
  */
 import { esc, tidy, a, md, range } from './shared.mjs';
-
-export const info = { slug: 'v6', short: '6', name: 'arXiv' };
 
 const css = `/* arXiv sets 16px on about 21px of leading; the density is most of the look. */
 body{margin:0;font:15px/1.32 Arial,Helvetica,sans-serif;color:#000}
@@ -114,7 +112,7 @@ export function render(C) {
             joinLinks([{ label: 'pdf', href: r.pdf }, ...r.artifacts].filter((x) => x.href).map((x) => ({ ...x, label: low(x.label) }))),
             `${esc(r.subtitle)}`
           ) +
-            `<span class="inc">${esc(r.venue)}, ${esc(r.date)}. Sole author.</span>` +
+            `<span class="inc">${esc(r.venue)}, ${esc(r.date)}.</span>` +
             ul(r.points.map(md)),
         ])
     )
@@ -125,7 +123,7 @@ export function render(C) {
       const role = g.role ? (g.roleHref ? a(g.roleHref, low(g.role)) : esc(low(g.role))) : '';
       const head = entry(
         a(g.href, g.org),
-        g.org.toLowerCase().replace(/\s+/g, '-'),
+        g.code ?? g.org.toLowerCase(),
         [role, a(g.href, 'all')].filter(Boolean).join(', '),
         `${esc(g.note)}; ${esc(range(g.from, g.to))}`
       );
@@ -162,7 +160,7 @@ export function render(C) {
           p.tag.split(' · ')[0].toLowerCase(),
           joinLinks(p.linksOut.map((l) => ({ ...l, label: l.label.toLowerCase() }))),
           esc(p.date)
-        ) + `<span class="inc">${esc(tidy(p.blurb))}</span>`
+        ) + `<span class="inc">${esc(p.line ?? tidy(p.blurb))}</span>`
     )
   );
 
