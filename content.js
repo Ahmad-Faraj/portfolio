@@ -11,11 +11,11 @@
 export const meta = {
   name: 'Ahmed Faraj',
   handle: 'Ahmad-Faraj',
-  role: 'Backend & Distributed Systems',
+  role: 'LLM agents and cloud-native infrastructure',
   location: 'Port Said, Egypt',
   email: 'ahmed.faraj.cs@gmail.com',
   phone: '+20 106 234 2090',
-  updated: 'August 2026',
+  updated: 'November 2026',
   // `stamp` is deliberately absent. It is the raw output of date(1), the way
   // cs.princeton.edu/~bwk carries one, and build.mjs derives it from the newest
   // mtime across this file and the templates. A hand-typed one goes stale, and
@@ -30,12 +30,12 @@ export const meta = {
   // Spaced rather than punctuated, the way bwk writes his.
   emailPlain: 'ahmed.faraj.cs gmail com',
   // One paragraph. No adjectives that a reader could not verify from the page below.
-  bio: `Software engineer at Datajar, building data ingestion and attribution
-        pipelines for an analytics platform. Final-year CS at Suez Canal
-        University. I spend most of my time in Go and Python on distributed
-        systems, and most of the rest reading other people's code: CNCF
-        projects, GitLab, and 6,106 MCP servers I put in a sandbox to see
-        whether they do what their spec says.`,
+  bio: `Software engineer at Datajar, building the LLM agent that proposes
+        changes to a merchant's store and ad accounts, and the explainable BI
+        behind it. Final-year CS at Suez Canal University. Kubeflow org member
+        and contributor to Kyverno and PipeCD. Sole author of an
+        execution-based census of 6,106 MCP servers, submitted to Empirical
+        Software Engineering.`,
 };
 
 /**
@@ -47,38 +47,46 @@ export const meta = {
  * outside the brackets is escaped.
  */
 export const narrative = [
-  `I am a software engineer at [Datajar](https://datajar.co/) in Berlin, working
-   remotely from Egypt on the data ingestion and attribution pipelines behind an
-   analytics platform: Shopify, Shopware and the ad networks in one side, a
-   tenant-isolated warehouse out the other. I am in my final year of Computer
-   Science at Suez Canal University.`,
+  `I am a software engineer at [Datajar](https://datajar.co/), an AI analytics
+   company in Berlin, working part-time and remotely from Egypt. I build the
+   path by which an LLM agent proposes a change to a merchant's Shopify, Meta,
+   Zid or Salla account and a person approves it before anything is written,
+   and the BI behind it, where every figure in a chat answer can show where it
+   came from. I am in my final year of Computer Science at Suez Canal
+   University.`,
 
-  `My interests are operating systems, distributed systems, and the gap between
-   what a specification says and what deployed software actually does. Most
-   recently I measured that gap: I built
-   [mcpprobe](https://github.com/Ahmad-Faraj/mcp-conformance), a harness that
-   installs an arbitrary Model Context Protocol server into a locked-down
-   container and drives it through the protocol, and ran it over the complete
-   frame of 6,106 registered servers. Two in five never complete a handshake.
-   The dominant deviation turned out to belong to three SDKs rather than to
-   thousands of authors, which is now the first deployment evidence attached to
-   [SEP-2145](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2145).`,
+  `My interests are distributed systems, LLM agents, and the gap between what a
+   specification says and what deployed software actually does. Most recently I
+   measured that gap: I built
+   [a harness](https://github.com/Ahmad-Faraj/mcp-conformance) that installs a
+   Model Context Protocol server into a locked-down container and drives it
+   through the protocol, and ran it over all 6,106 installable servers in the
+   official registry. Only 63.5% start and complete a handshake. The dominant
+   deviation belongs to SDK defaults rather than to thousands of authors, which
+   is now the first field data attached to
+   [SEP-2145](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2145#issuecomment-5142039121).
+   Six maintainers fixed their servers after my reports, and the
+   [Go SDK bug report](https://github.com/modelcontextprotocol/go-sdk/issues/1209)
+   credits the study. The [paper](https://doi.org/10.5281/zenodo.22996025) is
+   submitted to Empirical Software Engineering.`,
 
-  `I spend a good deal of time reading other people's code. In the cloud native
-   projects that has meant a scheduler cancel race in
-   [PipeCD](https://github.com/pipe-cd/pipecd/pull/6979), group-mention lookup in
-   its [Slack notifier](https://github.com/pipe-cd/pipecd/pull/6981), MPIJob
-   dependency interpretation in
-   [Karmada](https://github.com/karmada-io/karmada/pull/7721), a leaked response
-   body in its [aggregated request handler](https://github.com/karmada-io/karmada/pull/7733),
-   sentinel-path validation in [kured](https://github.com/kubereboot/kured/pull/1372),
-   and tracing a ServiceAccount downsync bug in
-   [KubeStellar](https://github.com/kubestellar/kubestellar/issues/3870) to a
-   metadata-only apply path in library-go. Earlier, in the
+  `I spend a good deal of time reading other people's code. I am a
+   [Kubeflow org member](https://github.com/kubeflow/internal-acls/pull/982):
+   there I made failed tool calls in its
+   [MCP server](https://github.com/kubeflow/mcp-server/pull/282) report an error
+   instead of success, and fixed a nil dereference in
+   [Trainer's MPI plugin](https://github.com/kubeflow/trainer/pull/4333). In
+   [Kyverno](https://github.com/kyverno/kyverno/pull/17641) I made
+   PolicyException updates reach namespaced CEL policies at once, and fixed
+   [colliding webhook names](https://github.com/kyverno/kyverno/pull/17558) that
+   made the API server reject image policies. In
+   [PipeCD](https://github.com/pipe-cd/pipecd/pull/6979) I fixed a cancel race
+   that ran rollback in parallel with the next stage, and a
+   [leaked clone](https://github.com/pipe-cd/pipecd/pull/7021) on every
+   skip-stage check. Earlier, in the
    [GitLab Development Kit](https://gitlab.com/gitlab-org/gitlab-development-kit/-/merge_requests/5345),
-   it meant false port conflicts between Nginx and Zoekt, and
-   [TTY guards](https://gitlab.com/gitlab-org/gitlab-development-kit/-/merge_requests/5291)
-   in front of destructive backup operations.`,
+   it meant false port conflicts between Nginx and Zoekt, among 25 merged
+   merge requests.`,
 
   `Other things I have built include
    [Orbit Onboard](https://github.com/Ahmad-Faraj/orbit-onboard-aws), which ranks
@@ -89,7 +97,7 @@ export const narrative = [
    the JVM; and an [operating system](https://github.com/Ahmad-Faraj/jack-os) for
    a 16-bit machine built up from NAND gates.`,
 
-  `I compete. ACPC finalist, Meta Hacker Cup round two,
+  `I compete. Twice an ACPC finalist, Meta Hacker Cup round two,
    [Codeforces](https://codeforces.com/profile/Ahmed_Faraj) Expert, and somewhere
    past three thousand problems. I ran training for
    [ICPC SCU](https://github.com/Ahmad-Faraj/icpc-scu) and wrote 50+ problems for
@@ -110,83 +118,160 @@ export const links = [
 export const experience = [
   {
     org: 'Datajar',
-    orgNote: 'AI Data Analytics',
+    orgNote: 'AI Analytics',
     title: 'Software Engineer',
     detail: 'Part-time',
     place: 'Berlin, Germany (remote)',
     from: 'Nov 2025',
     to: null,
     href: 'https://datajar.co/',
-    // Written in the same voice as the open-source items below: what the thing
-    // is and what it does, no counts. Scope numbers (datasets, users, GB,
-    // environments) are facts about the company, not about the engineering, and
-    // sitting two inches above a 95% confidence interval they made the measured
-    // numbers look like the same species. The one load figure that survives is
-    // spelled out, so it reads as a statement rather than a badge.
     points: [
-      'Designed the ingestion path across three services, from the source APIs to the warehouse.',
-      'Wrote the integrations for Shopify, Shopware and the Meta and Google ad APIs, and took the pipeline to ten thousand requests a minute.',
-      'Built the attribution path for PostHog, Google Analytics, GTM and the Meta Pixel.',
-      'Enforced tenant isolation with a MinIO registry behind a WorkOS auth layer.',
+      'Architected the agentic write path: the LLM proposes writes to Shopify, Meta, Zid and Salla, and a person approves each one before it is applied.',
+      'Built explainable BI over chat: lineage for every figure, re-runs that cost no model calls, drill-through, and board packs.',
+      'Hardened the LLM layer with DSPy-compiled prompts, eval suites, and provider failover that is aware of streaming responses.',
+      'Owned eight OAuth commerce and ads integrations, and a connector layer that syncs 2,795 scripts across 143 providers.',
+      'Closed a remote code execution hole in the analysis sandbox (pandas readers, a dunder walk); cut 1.6 s from cold start and 166 KB from 46 routes.',
     ],
   },
 ];
 
 export const research = [
   {
-    title: 'Does Your MCP Server Actually Follow the Protocol?',
-    subtitle: 'A Large-Scale Execution-Based Conformance Study of the Model Context Protocol Ecosystem',
+    title: 'Installed, Launched, Probed',
+    subtitle: 'An Execution-Based Conformance Census of the Model Context Protocol Registry',
     authors: 'A. Faraj',
-    // Not on arXiv yet, so it is described as what it is: a preprint, shipped here.
-    // Change this to 'arXiv preprint (cs.SE)' once it has an arXiv identifier.
-    venue: 'Preprint',
-    date: 'Aug 2026',
-    // Shipped alongside the page, so the title links to the paper itself rather
-    // than to the repository that produces it.
-    pdf: 'Faraj_MCP_conformance_preprint.pdf',
+    // Submitted on 27 Sep 2026, editor not yet assigned. "Submitted" is the
+    // honest word until the journal says otherwise; not "under review".
+    venue: 'Submitted to Empirical Software Engineering (Springer)',
+    date: 'Sep 2026',
+    pdf: 'Faraj-2026-MCP-conformance-census-preprint.pdf',
     thumb: 'paper-p1.jpg',
+    abstract: `The Model Context Protocol connects LLM agents to external tools, and
+               public registries now list tens of thousands of servers. This census
+               launches every one of the 6,106 locally installable servers in the
+               official registry in an isolated sandbox and sends each an unknown
+               tool name, an argument of the wrong type and a malformed frame. Only
+               63.5% start and complete a handshake, and the deviations that follow
+               trace to SDK defaults rather than to server authors.`,
+    // `[label](url)` is rendered by md(); everything else is escaped.
     points: [
-      'Executed 6,106 registered servers in isolated Docker sandboxes; only 61.1% (95% CI 59.8–62.3) complete a protocol handshake as published.',
-      'Traced an 88.4% shared deviation to defaults in three SDKs rather than thousands of independent author decisions, supplying the first deployment data to open spec proposal SEP-2145.',
-      'Surfaced a silent-execution class: 129 servers run tools on arguments their own declared schema rejects, violating an explicit MUST in the specification.',
-      'Filed 15 responsible-disclosure reports for servers that crash or hang on a malformed frame; several are already fixed.',
+      'Executed all 6,106 installable servers (of 17,432 registry entries) in Docker sandboxes; only 63.5% (95% CI 59.9–66.5) start and complete a handshake.',
+      'Disclosed to 15 maintainers: six fixed their servers and three reproduced the failure independently, among them [GoReleaser #62](https://github.com/goreleaser/mcp/pull/62) and [StackQL #702](https://github.com/stackql/stackql/pull/702).',
+      'Traced an 88.4% unknown-tool deviation to SDK defaults, and supplied the first field data to spec proposal [SEP-2145](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2145#issuecomment-5142039121).',
+      'Found silent execution: 3.5% of servers run a tool on arguments their own schema rejects and return an ordinary result ([TypeScript SDK #2628](https://github.com/modelcontextprotocol/typescript-sdk/issues/2628)).',
+      'Surfaced a stdio transport crash in the official Go SDK; its bug report credits this study ([go-sdk #1209](https://github.com/modelcontextprotocol/go-sdk/issues/1209)).',
     ],
+    // Order matters: v1, v3 and v5 link the title to [0], v3 labels [1] as SEP-2145.
     artifacts: [
-      { label: 'Harness & dataset', href: 'https://github.com/Ahmad-Faraj/mcp-conformance' },
-      { label: 'SEP-2145',          href: 'https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2145' },
-      { label: 'SEP-1303',          href: 'https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1303' },
+      { label: 'Paper (Zenodo)',  href: 'https://doi.org/10.5281/zenodo.22996025' },
+      { label: 'SEP-2145',        href: 'https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2145#issuecomment-5142039121' },
+      { label: 'Data and code',   href: 'https://doi.org/10.5281/zenodo.22981443' },
+      { label: 'Harness',         href: 'https://github.com/Ahmad-Faraj/mcp-conformance' },
     ],
   },
 ];
 
 /**
- * `state` is rendered verbatim. Keep it truthful.
+ * `state` is rendered verbatim. Keep it truthful. Re-checked on GitHub 3 Nov 2026.
+ * `role` and `roleHref` are optional; only the arXiv version shows them.
  */
 export const openSource = [
   {
-    org: 'CNCF',
-    note: 'Cloud native',
-    from: 'Jun 2026',
+    org: 'Kubeflow',
+    note: 'CNCF, ML on Kubernetes',
+    role: 'Org member',
+    roleHref: 'https://github.com/kubeflow/internal-acls/pull/982',
+    from: 'Sep 2026',
     to: null,
-    // /search, not /pulls; the latter 404s for logged-out visitors.
-    href: 'https://github.com/search?q=is%3Apr+author%3AAhmad-Faraj+-user%3AAhmad-Faraj&type=pullrequests',
+    href: 'https://github.com/search?q=is%3Apr+author%3AAhmad-Faraj+org%3Akubeflow&type=pullrequests',
     items: [
       {
-        ref: 'pipecd#6979', state: 'open',
+        ref: 'mcp-server#282', state: 'merged',
+        href: 'https://github.com/kubeflow/mcp-server/pull/282',
+        text: 'Made failed MCP tool calls return isError to clients instead of reporting success.',
+      },
+      {
+        ref: 'mcp-server#233', state: 'merged',
+        href: 'https://github.com/kubeflow/mcp-server/pull/233',
+        text: 'Made the MCP server accept the dotted torchtune runtime names that Trainer ships.',
+      },
+      {
+        ref: 'trainer#4333', state: 'merged',
+        href: 'https://github.com/kubeflow/trainer/pull/4333',
+        text: 'Fixed a nil dereference in Trainer’s MPI plugin and extended the test that let it through.',
+      },
+    ],
+  },
+  {
+    org: 'Kyverno',
+    note: 'CNCF, Kubernetes policy engine',
+    role: 'Contributor',
+    from: 'Sep 2026',
+    to: null,
+    href: 'https://github.com/search?q=is%3Apr+author%3AAhmad-Faraj+repo%3Akyverno%2Fkyverno&type=pullrequests',
+    items: [
+      {
+        ref: 'kyverno#17641', state: 'merged',
+        href: 'https://github.com/kyverno/kyverno/pull/17641',
+        text: 'Made PolicyException updates reach namespaced CEL policies at once, across three policy controllers.',
+      },
+      {
+        ref: 'kyverno#17558', state: 'merged',
+        href: 'https://github.com/kyverno/kyverno/pull/17558',
+        text: 'Fixed colliding webhook names that made the API server reject image validating policy webhooks.',
+      },
+      {
+        ref: 'kyverno#17560', state: 'merged',
+        href: 'https://github.com/kyverno/kyverno/pull/17560',
+        text: 'Fixed invalid JUnit XML from kyverno test when a failure had no detailed results.',
+      },
+      {
+        ref: 'kyverno#17581', state: 'merged',
+        href: 'https://github.com/kyverno/kyverno/pull/17581',
+        text: 'Truncated event notes on a character boundary, so events are no longer rejected for splitting a UTF-8 character.',
+      },
+    ],
+  },
+  {
+    org: 'PipeCD',
+    note: 'CNCF, GitOps',
+    role: 'Contributor',
+    from: 'Jul 2026',
+    to: null,
+    href: 'https://github.com/search?q=is%3Apr+author%3AAhmad-Faraj+repo%3Apipe-cd%2Fpipecd&type=pullrequests',
+    items: [
+      {
+        ref: 'pipecd#6979', state: 'merged',
         href: 'https://github.com/pipe-cd/pipecd/pull/6979',
-        text: 'Fixed a scheduler cancel race that abandoned a running stage and ran rollback in parallel with it.',
+        text: 'Stopped cancelled deployments from starting the next stage while rollback ran in parallel.',
         extra: { label: 'reported as #6978', href: 'https://github.com/pipe-cd/pipecd/issues/6978' },
+      },
+      {
+        ref: 'pipecd#7021', state: 'merged',
+        href: 'https://github.com/pipe-cd/pipecd/pull/7021',
+        text: 'Stopped piped leaking a cloned repository on every skip-stage check.',
+        extra: { label: 'pipedv1: #7275', href: 'https://github.com/pipe-cd/pipecd/pull/7275' },
+      },
+      {
+        ref: 'pipecd#7040', state: 'merged',
+        href: 'https://github.com/pipe-cd/pipecd/pull/7040',
+        text: 'Added the pipectl application enable command.',
       },
       {
         ref: 'pipecd#6981', state: 'merged',
         href: 'https://github.com/pipe-cd/pipecd/pull/6981',
         text: 'Fixed group-mention lookup so failed-deployment Slack alerts reach the right on-call group.',
       },
-      {
-        ref: 'kubestellar#3870', state: 'diagnosis',
-        href: 'https://github.com/kubestellar/kubestellar/issues/3870',
-        text: 'Root-caused ServiceAccount secrets never reaching edge clusters to a metadata-only apply path in library-go, on someone else’s bug report.',
-      },
+    ],
+  },
+  {
+    org: 'Other CNCF',
+    note: 'Karmada, KubeStellar, kured, Vitess, ORAS',
+    from: 'Jun 2026',
+    to: null,
+    // /search, not /pulls; the latter 404s for logged-out visitors.
+    href: 'https://github.com/search?q=is%3Apr+author%3AAhmad-Faraj+-user%3AAhmad-Faraj&type=pullrequests',
+    items: [
       {
         ref: 'karmada#7721', state: 'open',
         href: 'https://github.com/karmada-io/karmada/pull/7721',
@@ -199,6 +284,16 @@ export const openSource = [
         text: 'Closed a leaked response body on early returns in the aggregated request handler.',
       },
       {
+        ref: 'kubestellar#3870', state: 'diagnosis',
+        href: 'https://github.com/kubestellar/kubestellar/issues/3870',
+        text: 'Root-caused ServiceAccount secrets never reaching edge clusters to a metadata-only apply path in library-go, on someone else’s bug report.',
+      },
+      {
+        ref: 'kured#1372', state: 'merged',
+        href: 'https://github.com/kubereboot/kured/pull/1372',
+        text: 'Validated the sentinel file path in NewFileRebootChecker instead of failing later at reboot time.',
+      },
+      {
         ref: 'vitess#20364', state: 'merged',
         href: 'https://github.com/vitessio/vitess/pull/20364',
         text: 'Renamed reserved-connection reconnect test packages to describe what they actually exercise.',
@@ -208,17 +303,13 @@ export const openSource = [
         href: 'https://github.com/oras-project/oras/pull/2087',
         text: 'Fixed a typo in the log entry separator constant.',
       },
-      {
-        ref: 'kured#1372', state: 'open',
-        href: 'https://github.com/kubereboot/kured/pull/1372',
-        text: 'Validated the sentinel file path in NewFileRebootChecker instead of failing later at reboot time.',
-      },
     ],
   },
   {
     org: 'GitLab',
     note: 'Development Kit, main repo',
-    from: 'Oct 2025',
+    role: '25+ merged MRs',
+    from: 'Sep 2025',
     to: 'Jan 2026',
     // Project-scoped search, not /dashboard; the latter requires a login.
     // Covers the GDK items only; the gitlab-org/gitlab ones link individually.
@@ -399,7 +490,7 @@ export const education = [
     from: 'Sep 2023',
     to: 'Jul 2027',
     points: [
-      'GPA 3.65 / 4.00, ranked 3rd in class, Academic Excellence Award.',
+      'GPA 3.60 / 4.00, ranked 2nd in class, Academic Excellence Award twice.',
       'Coursework: data structures, algorithms, operating systems, databases, computer networks, distributed systems.',
     ],
     // Shipped alongside the page, so this stays correct wherever the site is deployed.
@@ -412,8 +503,8 @@ export const achievements = [
   {
     group: 'Competitive programming',
     items: [
-      { text: 'ACPC Finalist: 84th at the Arab Collegiate Programming Contest, 59th at ECPC, 1st in university.', date: 'Aug 2025', href: 'https://icpc.global/ICPCID/XRR2FB1ZXTL5', hrefLabel: 'ICPC' },
-      { text: 'Meta Hacker Cup: advanced to Round 2, 1,480 of 5,972.', date: 'Oct 2025', href: 'https://www.facebook.com/codingcompetitions/hacker-cup/2025/certificate/3769267336631460', hrefLabel: 'Meta' },
+      { text: 'ACPC Finalist twice: 84th at the Arab Collegiate Programming Contest, 59th at ECPC, 1st in university.', date: 'Aug 2025', href: 'https://icpc.global/ICPCID/XRR2FB1ZXTL5', hrefLabel: 'ICPC' },
+      { text: 'Meta Hacker Cup: Round 2 finalist, 1,480 of 5,972.', date: 'Oct 2025', href: 'https://www.facebook.com/codingcompetitions/hacker-cup/2025/certificate/3769267336631460', hrefLabel: 'Meta' },
       { text: 'Codeforces Expert, top 1% in Egypt.', date: null, href: 'https://codeforces.com/profile/Ahmed_Faraj', hrefLabel: 'Codeforces' },
       { text: 'LeetCode Knight, top 2% globally.', date: null, href: 'https://leetcode.com/u/Ahmed_Faraj/', hrefLabel: 'LeetCode' },
       { text: '3,000+ algorithmic problems and 100+ SQL problems solved.', date: null, href: 'https://atcoder.jp/users/Ahmed_Faraj', hrefLabel: 'AtCoder' },
@@ -444,7 +535,7 @@ export const community = [
   },
   {
     text: 'GDG SCU, IT Specialist: ran programming fundamentals sessions for 100+ students.',
-    href: 'https://github.com/Ahmad-Faraj/gdg-scu', hrefLabel: 'Archive',
+    href: 'https://drive.google.com/drive/folders/1XlCenHTWToYcKzHPidy9hajvtp5jD1L0?usp=sharing', hrefLabel: 'Sessions',
   },
   {
     text: 'CP-Template: competitive programming templates and references used by the SCU team.',
@@ -453,18 +544,16 @@ export const community = [
 ];
 
 export const skills = [
-  { group: 'Languages',    items: ['Go', 'Python', 'C/C++', 'Java', 'TypeScript', 'Rust'] },
-  { group: 'Systems',      items: ['Linux', 'Docker', 'Kubernetes', 'Terraform', 'Kafka', 'Nginx'] },
-  { group: 'Data',         items: ['PostgreSQL', 'Redis', 'MongoDB', 'DynamoDB', 'MinIO', 'S3'] },
-  { group: 'Cloud',        items: ['AWS', 'GCP', 'Lambda', 'SQS', 'CI/CD'] },
-  { group: 'Web',          items: ['Node.js', 'FastAPI', 'React', 'Next.js', 'Express'] },
-  { group: 'Daily driver', items: ['Neovim', 'tmux', 'git'] },
+  { group: 'Languages and frameworks', items: ['Go', 'Python', 'TypeScript', 'C/C++', 'Java', 'SQL', 'NestJS', 'FastAPI', 'React', 'Next.js'] },
+  { group: 'MLOps and AI',             items: ['Distributed training on Kubernetes', 'LLM agents', 'RAG', 'LangChain', 'vector databases', 'MCP', 'DSPy'] },
+  { group: 'Cloud and infrastructure', items: ['AWS', 'GCP', 'Kubernetes', 'Docker', 'Terraform', 'CI/CD', 'Linux', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka'] },
+  { group: 'Daily driver',             items: ['Neovim', 'tmux', 'git'] },
 ];
 
 /** Small numbers worth stating plainly. Used by versions that show a header strip. */
 export const facts = [
-  { k: '6,106', v: 'MCP servers measured' },
-  { k: '10K+',  v: 'requests / minute in production' },
-  { k: '3rd',   v: 'in class, GPA 3.65' },
+  { k: '6,106', v: 'MCP servers executed' },
+  { k: '6',     v: 'maintainers fixed their servers' },
+  { k: '2nd',   v: 'in class, GPA 3.60' },
   { k: '3,000+',v: 'problems solved' },
 ];

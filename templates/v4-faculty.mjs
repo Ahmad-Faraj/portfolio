@@ -9,7 +9,7 @@
  * This is the only version that numbers the publication list, which is what a
  * reader coming from a paper expects to find.
  */
-import { esc, tidy, a, range, dot } from './shared.mjs';
+import { esc, tidy, a, md, range, dot } from './shared.mjs';
 
 export const info = { slug: 'v4', short: '4', name: 'Faculty' };
 
@@ -42,7 +42,7 @@ export function render(C) {
     `\n</ol>`;
 
   const resBody = research
-    .map((r) => `<p>${esc(tidy(r.abstract))}</p>\n` + ul(r.points.map(esc)))
+    .map((r) => `<p>${esc(tidy(r.abstract))}</p>\n` + ul(r.points.map(md)))
     .join('\n');
 
   const soft = ul(

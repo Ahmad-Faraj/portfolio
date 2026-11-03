@@ -1,6 +1,7 @@
 # Portfolio: Ahmed Faraj
 
-Five pages in the idiom of the classic CS homepage. Content lives in exactly one
+Six pages: five in the idiom of the classic CS homepage, one after the arxiv.org
+front page, which is the one deployed. Content lives in exactly one
 place; each version is a template that renders it. White or off-white only, no
 dependencies, no framework, no client-side JavaScript, no network requests.
 
@@ -57,7 +58,8 @@ third person and makes it funny, which only works once nobody needs convincing.
 | v2 Kernighan | cs.princeton.edu/~bwk | 391 B | 17.4 kB |
 | v3 Stroustrup | stroustrup.com | **0 B** | 11.1 kB |
 | v4 Faculty | generic department page | 229 B | 13.7 kB |
-| v5 Sidebar | two-column department page | 324 B | 17.0 kB |
+| v5 Sidebar | two-column department page | 324 B | 20.7 kB |
+| v6 arXiv | arxiv.org front page | 1695 B | 23.8 kB |
 
 v2 departs from bwk in four small ways, all deliberate: `2.5em` side margins so
 the text does not sit against the window edge, a hairline rule under each `h3`,
@@ -100,17 +102,17 @@ static/
 templates/
   shared.mjs          escaping, links, document shell, favicon, preview line
   v1-morris.mjs  v2-kernighan.mjs  v3-stroustrup.mjs
-  v4-faculty.mjs v5-sidebar.mjs
-  landing.mjs         review-only page listing all five
-.github/workflows/    builds v2 and publishes it to Pages on push to main
+  v4-faculty.mjs v5-sidebar.mjs  v6-arxiv.mjs
+  landing.mjs         review-only page listing all six
+.github/workflows/    builds v6 and publishes it to Pages on push to main
 dist/                 generated, safe to delete
 ```
 
 ## Deployed
 
-`main` builds v2 and publishes it to
+`main` builds v6 and publishes it to
 [ahmad-faraj.github.io/portfolio](https://ahmad-faraj.github.io/portfolio/),
-which is the URL printed on the CV. The workflow runs `npm run ship v2` and
+which is the URL printed on the CV. The workflow runs `npm run ship v6` and
 uploads `dist/`; there is nothing to install, so there is no lockfile and no
 install step.
 

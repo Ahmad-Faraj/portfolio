@@ -9,7 +9,7 @@
  * On a phone the table collapses to one column, the single media query in
  * the whole project, and the reason this version costs more than the others.
  */
-import { esc, tidy, a, range, dot } from './shared.mjs';
+import { esc, tidy, a, md, range, dot } from './shared.mjs';
 
 export const info = { slug: 'v5', short: '5', name: 'Sidebar' };
 
@@ -64,7 +64,7 @@ ${links.map((l) => a(l.href, l.label)).join('<br>\n')}
       (r) =>
         `<p>${a(r.artifacts[0].href, r.title)}<br>\n<i>${esc(r.authors)}, ${esc(r.venue)}, ${esc(r.date)}</i></p>\n` +
         `<p>${esc(tidy(r.abstract))}</p>\n` +
-        ul(r.points.map(esc)) +
+        ul(r.points.map(md)) +
         `\n<p><small>${r.artifacts.map((x) => a(x.href, x.label)).join(' &middot; ')}</small></p>`
     )
     .join('\n');

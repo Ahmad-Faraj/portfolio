@@ -46,5 +46,5 @@ createServer(async (req, res) => {
   console.log(`    /      all five, side by side`);
   console.log(`    /v1/   Morris          /v2/   Kernighan`);
   console.log(`    /v3/   Stroustrup      /v4/   Faculty`);
-  console.log(`    /v5/   Sidebar\n`);
+  console.log(`    /v5/   Sidebar         /v6/   arXiv\n`);
 });

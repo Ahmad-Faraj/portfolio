@@ -19,12 +19,13 @@ import * as v2 from './templates/v2-kernighan.mjs';
 import * as v3 from './templates/v3-stroustrup.mjs';
 import * as v4 from './templates/v4-faculty.mjs';
 import * as v5 from './templates/v5-sidebar.mjs';
+import * as v6 from './templates/v6-arxiv.mjs';
 import * as landing from './templates/landing.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DIST = resolve(HERE, 'dist');
 
-const TEMPLATES = [v1, v2, v3, v4, v5];
+const TEMPLATES = [v1, v2, v3, v4, v5, v6];
 const VERSIONS = TEMPLATES.map((t) => t.info);
 
 const argv = process.argv.slice(2);
@@ -43,13 +44,13 @@ const ASSETS = [
   ['static/ahmed_faraj_cv.pdf', 'ahmed_faraj_cv.pdf'],
   ['static/photo.jpg', 'photo.jpg'],
   ['static/ahmed_faraj_transcript_english.pdf', 'ahmed_faraj_transcript_english.pdf'],
-  ['static/Faraj_MCP_conformance_preprint.pdf', 'Faraj_MCP_conformance_preprint.pdf'],
+  ['static/Faraj-2026-MCP-conformance-census-preprint.pdf', 'Faraj-2026-MCP-conformance-census-preprint.pdf'],
   ['static/paper-p1.jpg', 'paper-p1.jpg'],
 ];
 
 const DESC =
-  `${C.meta.name}, ${C.meta.role} engineer. Datajar, CNCF and GitLab contributor, ` +
-  `author of a 6,106-server MCP conformance study.`;
+  `${C.meta.name}, software engineer at Datajar working on LLM agents. Kubeflow org member, ` +
+  `Kyverno and PipeCD contributor, author of an execution-based census of 6,106 MCP servers.`;
 
 async function exists(p) {
   try { await access(p); return true; } catch { return false; }
@@ -153,7 +154,7 @@ async function main() {
     const { css, body, bg } = landing.render(CONTENT, picked.map((t) => t.info));
     const bytes = await emit(DIST, page({
       title: `${C.meta.name}, portfolio versions`,
-      desc: 'Five pages in the idiom of the classic CS homepage.',
+      desc: 'Six pages in the idiom of the classic CS homepage and arxiv.org.',
       css, body, bg,
       current: '', versions: VERSIONS, clean: true,
     }));
