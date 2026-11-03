@@ -69,22 +69,26 @@ export const rules = (css) =>
 /**
  * Document shell.
  *
- * `<html>`, `<head>` and `<body>` are omitted; they are optional in HTML5 and
- * the parser inserts them. danluu.com ships exactly this way. `color-scheme:
- * light` pins the page white so a reader in dark mode still sees paper.
+ * `<html>`, `<head>` and `<body>` are written out even though HTML5 makes them
+ * optional: LinkedIn's scraper only reads Open Graph tags inside an explicit
+ * `<head>`, and without one it guessed a title and image from the page body.
+ * `color-scheme: light` pins the page white so a reader in dark mode still
+ * sees paper.
  *
  * The Open Graph and Twitter tags are what LinkedIn, WhatsApp, Slack and X read
  * to draw a link preview. Their image must be an absolute URL.
  */
 export const page = ({ title, desc, css, body, bg, url, image }) =>
   `<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${esc(url)}">
-<meta property="og:type" content="profile">
+<meta property="og:type" content="website">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${esc(url)}">
@@ -94,5 +98,8 @@ export const page = ({ title, desc, css, body, bg, url, image }) =>
 <meta property="og:image:alt" content="${esc(title)}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,${MARK}">
-${css ? `<style>${rules(css)}</style>\n` : ''}<body${bg ? ` bgcolor="${bg}"` : ''}>
-${body}`;
+${css ? `<style>${rules(css)}</style>\n` : ''}</head>
+<body${bg ? ` bgcolor="${bg}"` : ''}>
+${body}
+</body>
+</html>`;
